@@ -1,0 +1,265 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+main {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+}
+section {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 45%;
+}
+h2 {
+    color: #333;
+    margin-top: 0;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ccc;
+}
+th {
+    background-color: #f2f2f2;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+    margin: 0 auto;
+}
+label {
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+input[type="text"],
+input[type="password"] {
+    padding: 8px;
+    margin-bottom: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.delete-btn {
+    background-color: #cc3333;
+}
+
+.delete-btn:hover {
+    background-color: #ff6666;
+}
+.edit-btn {
+    background-color: #3366cc;
+    margin-right: 5px;
+}
+
+.edit-btn:hover {
+    background-color: #6699ff;
+}
+
+/* Additional styles for the update form */
+.update-form {
+    display: none; /* Initially hide the update form */
+    margin-top: 10px;
+}
+
+.update-form input {
+    margin-right: 5px;
+}
+
+.update-form button {
+    margin-top: 5px;
+}
+.user-management ul li {
+    display: flex; /* Use flexbox layout */
+    flex-direction: column; /* Arrange items vertically */
+    align-items: right; /* Center items horizontally */
+}
+
+.user-management ul li .edit-username,
+.user-management ul li .edit-password,
+.user-management ul li button {
+    margin-top: 15px; /* Add margin between items */
+}
+.form-container form label {
+    display: inline-block; /* Display labels as inline-block */
+    width: 120px; /* Set a fixed width for labels */
+    text-align: center; /* Align label text to the right */
+    margin-left: 80px; /* Add some right margin for spacing */
+}
+
+.form-container form input[type="text"],
+.form-container form input[type="password"] {
+    display: inline-block; /* Display input fields as inline-block */
+    width: 300px; /* Set a width for input fields */
+    box-sizing: border-box; /* Include padding and border in the width */
+}
+/* Styling for user list */
+#userList {
+    list-style: none;
+    padding: 0;
+}
+
+#userList li {
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    display: flex; /* Display items in a flex layout */
+    flex-direction: column; /* Set flex direction to column */
+}
+
+/* Styling for user info */
+.user-info {
+    display: flex;
+    flex-direction: column; /* Adjust to column layout */
+    margin-bottom: 10px;
+}
+
+.username-label, .password-label {
+    margin-right: 10px;
+}
+
+.username, .edit-username, .edit-password {
+    margin-bottom: 10px;
+}
+
+.edit-username {
+    width: calc(100% - 21px); /* Adjust width for input fields */
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.edit-password {
+    width: calc(100% - 21px); /* Adjust width for input fields */
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin-top: 10px; /* Add margin to separate from username */
+}
+
+/* Styling for user actions */
+.user-actions {
+    display: flex;
+    justify-content: flex-end; /* Align actions to the right */
+}
+
+.update-btn, .delete-btn {
+    padding: 5px 10px;
+    margin-right: 5px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.update-btn {
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+}
+
+.delete-btn {
+    background-color: #f44336;
+    color: #fff;
+    border: none;
+}
+
+.delete-btn:hover {
+    background-color: #d32f2f;
+}
+.view-btn, .approve-btn, .reject-btn, .comment-btn {
+    padding: 5px 10px;
+    margin-right: 5px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.view-btn {
+    background-color: #2196F3;
+    color: #fff;
+    border: none;
+}
+
+.approve-btn {
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+}
+
+.reject-btn {
+    background-color: #f44336;
+    color: #fff;
+    border: none;
+}
+
+.comment {
+    width: 100%;
+    padding: 5px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.comment-btn {
+    padding: 5px 10px;
+    margin-top: 5px;
+    cursor: pointer;
+    border-radius: 3px;
+    background-color: #2196F3;
+    color: #fff;
+    border: none;
+}
+.add-admin {
+    margin: 0 auto; /* Center the section horizontally */
+    width: fit-content; /* Adjust width to fit content */
+    padding: 20px; /* Add padding for better appearance */
+}
+@media (max-width: 570px) {
+    form {
+      padding: 0 1.5rem;
+    }
+  
+    .image {
+      display: none;
+    }
+    .panel .content {
+      padding: 0.5rem 1rem;
+    }
+    .container {
+      padding: 1.5rem;
+    }
+  
+    .container:before {
+      bottom: 72%;
+      left: 50%;
+    }
+  
+    .container.sign-up-mode:before {
+      bottom: 28%;
+      left: 50%;
+    }
+  }

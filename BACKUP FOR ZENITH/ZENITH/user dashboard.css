@@ -1,0 +1,168 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #0b470b; /* Green background color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('C:\\Users\\HP 348\\OneDrive\\Desktop\\ZENITH\\img\\marine.png');
+    background-size: auto; /* Resize the background image to its original size */
+    background-position:center    calc(50px - -90px); /* Move the background image to the right */
+    background-repeat: no-repeat;
+}
+
+
+.file-upload input[type="file"] {
+    display: none; /* Hide the default file input */
+}
+.file-upload {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+}
+
+#fileInput {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.folder-create input[type="text"],
+.search input[type="text"] {
+    margin-bottom: 10px; /* Add space at the bottom */
+}
+
+h1 {
+    font-size: 25px; /* Increase font size */
+    color: #0a5a0a; /* Text color */
+    margin-top: 0; /* Remove default margin */
+    margin-bottom: 20px; /* Adjust spacing below the title */
+    text-align: center; /* Center the title */
+}
+
+.folder-create,
+.search {
+    margin-top: 20px; /* Add some space at the top */
+}
+
+.folder-create input[type="text"],
+.search input[type="text"] {
+    width: calc(100% - 80px); /* Adjust input width */
+    padding: 30px;
+    background-color: #078d0765;
+    border: 1px solid #f7f7f7;
+    border-radius: 5px;
+    margin-right: 10px; /* Add some space between input and button */
+}
+
+.folder-create button,
+.search button {
+    padding: 10px 20px; /* Adjust button padding */
+    background-color: #078d196c;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 80%; /* Adjust the width as needed */
+    height: 80%; /* Adjust the height as needed */
+    margin: 10%; /* Adjust the margin as needed for centering */
+}
+
+.sidebar {
+    width: 250px;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #33333385;
+    color: #fff;
+    padding: 20px;
+}
+.upload-file-btn,
+.create-folder-btn,
+.search-btn {
+    padding: 20px 40px; /* Adjust button padding */
+    background-color: #078d196c; /* Button background color */
+    color: #ffffff; /* Button text color */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline-block; /* Display buttons as inline-block elements */
+    width: 200px; /* Set button width */
+    margin-right: 20px; /* Add space between buttons */
+    text-align: center; /* Center align button text */
+    margin-bottom: 20px; /* Add some space between buttons and bottom */
+}
+.upload-file-btn:hover,
+.create-folder-btn:hover,
+.search-btn:hover {
+    background-color: #078d19; /* Change background color on hover */
+}
+.container {
+    width: 100%;
+    position: absolute;
+    top: 20px; /* Adjust as needed */
+    text-align: center; /* Align content to the center */
+}
+/* Style for .folder-counter */
+.folder-counter {
+    background-color: #32940b6c; /* Counter background color */
+    padding: 20px; /* Padding around the counter */
+    border-radius: 10px; /* Rounded corners */
+    font-family: Arial, sans-serif; /* Specify font family */
+    text-align: center; /* Center the content */
+    position: relative; /* Use relative positioning */
+    top: -0px; /* Adjust vertical position */
+    right: -400px; /* Adjust horizontal position */
+}
+
+/* Style for .file-counter */
+.file-counter {
+    background-color: #32940b6c; /* Counter background color */
+    padding: 20px; /* Padding around the counter */
+    border-radius: 10px; /* Rounded corners */
+    font-family: Arial, sans-serif; /* Specify font family */
+    text-align: center; /* Center the content */
+    position: relative; /* Use relative positioning */
+    top: -141px; /* Adjust vertical position */
+    right: -650px; /* Adjust horizontal position */
+}
+.logout-btn {
+    padding: 10px 20px;
+    background-color: #078d196c;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 400px; /* Add margin to move the button lower */
+  }
+  
+  .logout-btn:hover {
+    background-color: #078d19; /* Change background color on hover */
+  }
+  
+
+
+
+@media screen and (max-width: 600px) {
+    .folder-create input[type="text"],
+    .search input[type="text"] {
+        width: calc(100% - 60px); /* Adjust input width for smaller screens */
+    }
+
+    .folder-create button,
+    .search button {
+        padding: 8px 16px; /* Adjust button padding for smaller screens */
+    }
+}
