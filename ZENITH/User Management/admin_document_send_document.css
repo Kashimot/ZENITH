@@ -1,3 +1,4 @@
+/* Common styles */
 body, html {
     margin: 0;
     padding: 0;
@@ -5,6 +6,7 @@ body, html {
     font-family: Arial, sans-serif;
     background-color: #144b17;
 }
+
 .sidebar {
     position: fixed;
     top: 0;
@@ -66,6 +68,7 @@ body, html {
 .nav-btn:hover {
     background-color: #cc0000;
 }
+
 /* Sidebar styles */
 .sidebar {
     background-color: #333;
@@ -162,6 +165,7 @@ body, html {
     transform: rotate(-45deg);
     bottom: 0;
 }
+
 /* CSS for send document form */
 .main-content {
     margin: 20px;
@@ -193,22 +197,15 @@ body, html {
     margin-left: 50px;
 }
 
-#sendDocumentForm input[type="file"] {
-    width: 500px;
+#sendDocumentForm input[type="file"],
+#sendDocumentForm select {
+    width: calc(100% - 100px);
     padding: 10px;
     margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    box-sizing: border-box;
-    margin-left: 50px;
-}
-#sendDocumentForm select {
-    width: 200px;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #111010;
-    border-radius: 5px;
-    box-sizing: border-box;
+    box-sizing:
+    border-box;
     margin-left: 50px;
 }
 
@@ -227,8 +224,8 @@ body, html {
 #sendDocumentForm button[type="submit"]:hover {
     background-color: #45a049;
 }
-/* CSS for the added features */
 
+/* CSS for the added features */
 #documentList li {
     margin-bottom: 10px;
     padding: 10px;
@@ -268,4 +265,44 @@ body, html {
     border-radius: 3px;
 }
 
-
+/* Responsive Design */
+@media only screen and (max-width: 768px) {
+    .sidebar {
+        width: 180px;
+    }
+    
+    .sidebar.active {
+        left: -180px;
+    }
+    
+    .content {
+        margin-left: 180px;
+    }
+    
+    .main-content {
+        margin: 10px;
+    }
+    
+    #sendDocumentForm h1 {
+        margin-left: 0;
+    }
+    
+    #sendDocumentForm {
+        margin-left: 0;
+        width: auto;
+    }
+    
+    #sendDocumentForm label {
+        margin-left: 0;
+    }
+    
+    #sendDocumentForm input[type="file"],
+    #sendDocumentForm select {
+        width: 100%;
+        margin-left: 0;
+    }
+    
+    #sendDocumentForm button[type="submit"] {
+        margin-left: 0;
+    }
+}

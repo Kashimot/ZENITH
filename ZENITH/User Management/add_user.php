@@ -1,9 +1,13 @@
 <?php
-// Database connection
+// Database connection parameters
 $servername = "localhost";
 $username = "root";
-$password = ""; // Assuming no password is set for root user
+$password = ""; // Enter your database password here
 $dbname = "zenith";
+
+// Enable error reporting for debugging
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -13,19 +17,30 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-// Retrieve data from POST request
-$newUserUsername = $_POST['newUserUsername'];
-$newUserPassword = $_POST['newUserPassword'];
+// Check if the form is submitted
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $username = $_POST['newUserUsername'];
+    $password = password_hash($_POST['newUserPassword'], PASSWORD_DEFAULT);
+    $department = $_POST['newUserDepartment'];
+    $added_by_admin = "admin"; // Change this according to your logic
+    $is_admin = ($department == '5') ? 1 : 0; // Check if user is an admin
 
-// Insert new user into the database
-$sql = "INSERT INTO users (username, password) VALUES ('$newUserUsername', '$newUserPassword')";
+    // Prepare SQL statement
+    $sql = "INSERT INTO user (username, password, added_by_admin, is_admin) VALUES (?, ?, ?, ?)";
+    
+    // Create prepared statement
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("sssi", $username, $password, $added_by_admin, $is_admin);
 
-if ($conn->query($sql) === TRUE) {
-    echo "New user added successfully";
-} else {
-    echo "Error adding new user: " . $conn->error;
+    // Execute the statement
+    if ($stmt->execute()) {
+        echo "User added successfully";
+    } else {
+        echo "Error: " . $sql . "<br>" . $conn->error;
+    }
+
+    // Close statement and connection
+    $stmt->close();
+    $conn->close();
 }
-
-// Close connection
-$conn->close();
 ?>

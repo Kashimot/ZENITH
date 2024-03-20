@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facilities Management Department</title>
+    <link rel="stylesheet" href="facilities_management.css">
+</head>
+<body>
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <h2>Menu</h2>
+        <ul>
+            <li><a href="facilities_document.html" class="nav-btn">Documents</a></li>
+            <li><a href="facilities_send_to_admin.html" class="nav-btn">Send to Admin</a></li>
+        </ul>
+    </aside>
+
+    <!-- Content -->
+    <div class="content">
+        <header>
+            <div class="hamburger-menu">
+                <div class="hamburger-icon"></div>
+            </div>
+            <h1>Facilities Management Department</h1>
+        </header>
+        <div class="container">
+            <!-- Add your department-specific content here -->
+            <p>Welcome to the Facilities Management Department page.</p>
+            
+            <!-- Quick Links -->
+            <div class="quick-links">
+                <h2>Quick Links</h2>
+                <ul>
+                    <li><a href="#">Maintenance Requests</a></li>
+                    <li><a href="#">Equipment Inventory</a></li>
+                    <li><a href="#">Room Reservations</a></li>
+                </ul>
+            </div>
+            
+            <!-- Announcements -->
+            <div class="announcements">
+                <h2>Announcements</h2>
+                <p>No announcements at the moment.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('.hamburger-icon').click(function() {
+                $('.sidebar').toggleClass('active');
+            });
+        });
+    </script>
+</body>
+</html>

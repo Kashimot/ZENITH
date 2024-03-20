@@ -163,110 +163,67 @@ body, html {
     transform: rotate(-45deg);
     bottom: 0;
 }
-/* Clock styles */
-.clock-container {
-    margin-top: 10px;
-    margin-bottom: 30px;
-    background-color: #153d0d5e;
-    border-radius: 5px;
-    padding: 10px 5px;
-    box-shadow: 1px 1px 5px rgba(255, 255, 255, 0), 0 15px 90px 30px rgba(4, 75, 10, 0);
-    display: flex;
-    position: fixed;
-    top: 10px;
-    right: 20px;
+/* Quick Links */
+.quick-links {
+    background-color: #f2f2f2; /* Light gray background */
+    border-radius: 10px; /* Rounded corners */
+    padding: 20px;
+    margin-top: 20px;
 }
 
-.clock-col {
-    text-align: center;
-    margin-right: 40px;
-    margin-left: 25px;
-    min-width: 30px;
-    position: relative;
+.quick-links h2 {
+    color: #333; /* Dark text color */
+    font-size: 24px;
+    margin-bottom: 10px;
 }
 
-.clock-col:not(:last-child):before,
-.clock-col:not(:last-child):after {
-    content: "";
-    background-color: rgba(0, 0, 0, 0.692);
-    height: 5px;
-    width: 5px;
-    border-radius: 50%;
-    display: block;
-    position: absolute;
-    right: -42px;
+.quick-links ul {
+    padding: 0;
 }
 
-.clock-col:not(:last-child):before {
-    top: 35%;
+.quick-links ul li {
+    margin-bottom: 5px;
 }
 
-.clock-col:not(:last-child):after {
-    top: 60%;
+.quick-links ul li a {
+    color: #007bff; /* Blue link color */
+    text-decoration: none;
+    transition: color 0.3s;
 }
 
-.clock-timer:before {
-    color: #fff;
-    font-size: 4.2rem;
-    text-transform: uppercase;
+.quick-links ul li a:hover {
+    color: #0056b3; /* Darker blue on hover */
 }
 
-.clock-label {
-    color: rgba(236, 226, 226, 0.911);
-    text-transform: uppercase;
-    font-size: .7rem;
-    margin-top: 10px;
-}
-/* Counter container styles */
-.counter-container {
-    margin-top: 200px;
-    display: flex;
-    justify-content: center; /* Center the container horizontally */
-    align-items: center; /* Center the container vertically */
-    flex-wrap: wrap; /* Allow items to wrap if needed */
-    max-width: 600px; /* Set maximum width */
-    margin-left: auto; /* Center the container */
-    margin-right: auto; /* Center the container */
+/* Announcements */
+.announcements {
+    background-color: #e9e9e9; /* Lighter gray background */
+    border-radius: 10px; /* Rounded corners */
+    padding: 20px;
+    margin-top: 20px;
 }
 
-.counter {
-    background-color: #07690f;
-    border-radius: 5px;
-    padding: 10px;
-    text-align: center;
-    cursor: pointer;
-    width: calc(33.33% - 20px); /* Set width of counter items (1/3 of container width with space in between) */
-    margin: 10px; /* Add margin to create space between items */
-    box-sizing: border-box; /* Include padding and border in the width calculation */
+.announcements h2 {
+    color: #333; /* Dark text color */
+    font-size: 24px;
+    margin-bottom: 10px;
 }
-/* Media query for smaller screens */
-@media only screen and (max-width: 768px) {
+
+.announcements p {
+    color: #555; /* Slightly darker text color */
+    margin-top: 0;
+}
+/* Responsive design */
+@media (max-width: 768px) {
+    /* Adjust styles for smaller screens */
+    .container {
+        width: 95%; /* Further adjusted width for smaller screens */
+        margin-left: 150px; /* Adjusted margin to accommodate the smaller sidebar width */
+    }
     .sidebar {
-        width: 150px;
+        width: 150px; /* Reduced width for smaller screens */
     }
-    
-    .content {
-        margin-left: 150px;
-    }
-    
-    .logout-btn {
-        margin-left: 10px;
-    }
-    
-    .nav-btn {
-        padding: 8px 16px;
-    }
-    
-    .clock-col {
-        margin-right: 20px;
-        margin-left: 15px;
-    }
-    
-    .counter-container {
-        margin-top: 100px;
-    }
-    
-    .counter {
-        width: calc(50% - 20px);
+    .container p {
+        font-size: 20px; /* Adjusted font size for smaller screens */
     }
 }

@@ -3,7 +3,7 @@ body, html {
     padding: 0;
     height: 100%;
     font-family: Arial, sans-serif;
-    background-color: #144b17;
+    background-color: #117516;
 }
 
 .sidebar {
@@ -12,7 +12,7 @@ body, html {
     left: 0;
     height: 100%;
     width: 250px;
-    background-color: #333;
+    background-color: #333; 
     color: #fff;
     overflow-y: auto;
 }
@@ -162,4 +162,27 @@ body, html {
 .hamburger-menu.active .hamburger-icon:after {
     transform: rotate(-45deg);
     bottom: 0;
+}
+/* Centered container */
+.container {
+    margin: 20px auto; /* Set top and bottom margin to 20px and horizontally center the container */
+    width: 800px; /* Adjust width as needed */
+    margin-top: 100px;
+}
+
+/* Main content styling */
+.main-content {
+    width: 800px; /* Adjust width as needed */
+    margin-top: 20px; /* Add margin to create space from the top */
+    text-align: center; /* Center the content horizontally */
+}
+
+#documentList {
+    list-style-type: none;
+    padding: 0;
+    background-color: #184b12;
+    margin-left: 250px;
+    width: 800px;
+    padding: 25px;
+    
 }

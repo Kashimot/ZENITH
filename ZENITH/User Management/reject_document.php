@@ -1,30 +1,22 @@
 <?php
-// Assuming you have a database connection established
-// Handle rejection of the document with comments
+// Include database connection
+include_once 'db_connection.php';
 
-// Check if the request method is POST
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Retrieve document ID and reason for rejection from the request body
-    $data = json_decode(file_get_contents("php://input"), true);
-    
-    // Validate input
-    if (isset($data['documentId']) && isset($data['reason'])) {
-        $documentId = $data['documentId'];
-        $reason = $data['reason'];
-        
-        // Here, you would update your database with the rejection reason for the document with the provided ID
-        // Replace this with your actual database update query
-        
-        // Send a success response
-        echo "Document with ID $documentId rejected successfully with reason: $reason";
-    } else {
-        // If document ID or reason is not provided, return an error response
-        http_response_code(400);
-        echo "Error: Document ID or reason is missing.";
-    }
+// Check if document ID and reason are provided
+if (isset($_POST['documentId']) && isset($_POST['reason'])) {
+    $documentId = $_POST['documentId'];
+    $reason = $_POST['reason'];
+
+    // Implement rejection logic here
+    // Example: Update document status to rejected in the database
+
+    // Return success response
+    echo json_encode(array('success' => true, 'message' => 'Document rejected successfully'));
 } else {
-    // If the request method is not POST, return an error response
-    http_response_code(405);
-    echo "Error: Method not allowed.";
+    // Return error response if required parameters are not provided
+    echo json_encode(array('error' => 'Invalid request'));
 }
+
+// Close database connection
+mysqli_close($conn);
 ?>
