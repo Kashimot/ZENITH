@@ -40,13 +40,23 @@
     <div id="errorMsg"></div>
 </div>
 
-        
-        <!-- List of uploaded files -->
-        <h2>Uploaded Files</h2>
-        <ul id="fileList">
-            <!-- Uploaded files will be displayed here -->
+<div class="container">
+    <!-- Approved Files Container -->
+    <div class="approved-files">
+        <h2>Approved Files</h2>
+        <ul id="approvedFilesList">
+            <!-- List of approved files will be dynamically populated here -->
         </ul>
     </div>
+
+    <!-- Rejected Files Container -->
+    <div class="rejected-files">
+        <h2>Rejected Files</h2>
+        <ul id="rejectedFilesList">
+            <!-- List of rejected files will be dynamically populated here -->
+        </ul>
+    </div>
+
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
@@ -95,6 +105,7 @@
                 }
             });
         });
+        
     </script>
 </body>
 </html>

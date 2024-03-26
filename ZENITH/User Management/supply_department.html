@@ -25,20 +25,32 @@
             <h1>Supply Department</h1>
         </header>
         <div class="container">
-            <!-- Add your department-specific content here -->
-            <p>Welcome to the Supply Department page.</p>
+            <!-- Announcements Section -->
+            <section class="announcements">
+                <h2>Announcements</h2>
+                <div class="announcement">
+                    <h3>New Procurement Policy</h3>
+                    <p>We have implemented a new procurement policy. Please review the document in the Documents section for details.</p>
+                </div>
+                <!-- Add more announcements as needed -->
+            </section>
+
+            <!-- Notification button -->
+            <button id="notificationButton" class="notification-btn" onclick="showNotification()">Notifications</button>
+
+            <!-- Notification popup (modal) -->
+            <div id="notificationPopup" class="notification-popup">
+                <div class="modal-content">
+                    <span class="close" onclick="closeNotificationModal()">&times;</span>
+                    <h2>Notifications</h2>
+                    <!-- Notification items will be dynamically added here -->
+                    <ul id="notificationList">
+                        <!-- Notifications will be added dynamically here -->
+                    </ul>
+                    <button id="clearNotificationsButton" class="clear-btn">Clear Notifications</button>
+                </div>
+            </div>
         </div>
-    </div>
-    <div class="container">
-        <!-- Add your department-specific content here -->
-        <p>Welcome to the Facilities Management Department page.</p>
-        <!-- Example: List of uploaded files for Facilities Management Department -->
-        <h2>Uploaded Files</h2>
-        <ul>
-            <li><a href="#">File 1</a></li>
-            <li><a href="#">File 2</a></li>
-            <!-- Add more files as needed -->
-        </ul>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -47,7 +59,43 @@
             $('.hamburger-icon').click(function() {
                 $('.sidebar').toggleClass('active');
             });
+
+            // Function to fetch notifications using AJAX
+            function fetchNotifications() {
+                $.ajax({
+                    url: 'get_notifications.php',
+                    type: 'GET',
+                    success: function(response) {
+                        // Parse JSON response and update the notification list
+                        var notifications = JSON.parse(response);
+                        if (notifications && notifications.length > 0) {
+                            $('#notificationList').empty(); // Clear previous notifications
+                            notifications.forEach(function(notification) {
+                                $('#notificationList').append('<li>' + notification.message + '</li>');
+                            });
+                        } else {
+                            $('#notificationList').html('<li>No notifications found</li>');
+                        }
+                    },
+                    error: function(xhr, status, error) {
+                        console.error('Error fetching notifications:', error);
+                    }
+                });
+            }
+
+            // Call the fetchNotifications function initially
+            fetchNotifications();
         });
+
+        function showNotification() {
+            var modal = document.getElementById("notificationPopup");
+            modal.classList.add("active");
+        }
+
+        function closeNotificationModal() {
+            var modal = document.getElementById("notificationPopup");
+            modal.classList.remove("active");
+        }
     </script>
 </body>
 </html>

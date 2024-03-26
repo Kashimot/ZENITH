@@ -3,7 +3,7 @@ body, html {
     padding: 0;
     height: 100%;
     font-family: Arial, sans-serif;
-    background-color: #144b17;
+    background-color: #134b16;
 }
 
 .sidebar {
@@ -12,7 +12,7 @@ body, html {
     left: 0;
     height: 100%;
     width: 250px;
-    background-color: #333;
+    background-color: #a7ebaa;
     color: #fff;
     overflow-y: auto;
 }
@@ -69,7 +69,7 @@ body, html {
 }
 /* Sidebar styles */
 .sidebar {
-    background-color: #333;
+    background-color: #5e9e61;
     color: #fff;
     width: 200px;
     height: 100vh;
@@ -162,4 +162,115 @@ body, html {
 .hamburger-menu.active .hamburger-icon:after {
     transform: rotate(-45deg);
     bottom: 0;
+}
+/* Container styling */
+.container {
+    width: 60%;
+    margin: 0 auto;
+    margin-top: 50px;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    position: relative;
+    overflow: hidden; /* Ensure content overflow is hidden */
+    margin-left: 250px;
+}   
+
+/* Form container styling */
+.form-container {
+    border-radius: 10px;
+    padding: 20px;
+}
+
+/* Styling for checkboxes */
+input[type="checkbox"] {
+    margin-right: 10px; /* Add space between checkbox and label */
+    margin-left: 0; /* Reset left margin */
+    appearance: none; /* Remove default appearance */
+    -webkit-appearance: none; /* For Safari */
+    width: 20px; /* Set width and height for custom checkbox */
+    height: 20px;
+    border: 2px solid #000000; /* Add border */
+    border-radius: 5px; /* Add border-radius for rounded corners */
+    transition: border-color 0.3s; /* Add transition for smooth border color change */
+    flex-shrink: 0; /* Prevent checkbox from shrinking */
+}
+
+/* Styling for labels */
+label {
+    display: flex; /* Use flexbox to align checkbox and label */
+    align-items: center; /* Vertically center checkbox and label */
+    font-weight: bold;
+    margin-bottom: 5px;
+    cursor: pointer; /* Change cursor to pointer when hovering over label */
+}
+
+/* Styling for custom checkbox when checked */
+input[type="checkbox"]:checked {
+    background-color: #4CAF50; /* Change background color when checked */
+    border-color: #4CAF50; /* Change border color when checked */
+}
+
+/* Styling for form submit button */
+button[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+    margin-right: 900px;
+    width: 150px;
+}
+
+button[type="submit"]:hover {
+    background-color: #10c219;
+}
+/* Styling for the send document form */
+.container {
+    margin: 20px auto;
+    max-width: 600px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.container h2 {
+    margin-top: 0;
+    font-size: 24px;
+    color: #0a0909;
+}
+
+.file-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.file-list li {
+    margin-bottom: 10px;
+}
+
+.file-list li label {
+    display: block;
+}
+
+.file-list li input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+button[type="submit"] {
+    background-color: #0e5c0e;
+    color: #f6fdf5;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #2ba705;
 }
