@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Training Department</title>
+    <link rel="stylesheet" href="training_department.css">
+</head>
+<body>
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <h2>Menu</h2>
+        <ul>
+            <li><a href="training_document.html">Document</a></li>
+            <li><a href="training_send_to_admin.html">Send to Admin</a></li>
+        </ul>
+    </aside>
+
+    <!-- Content -->
+    <div class="content">
+        <header>
+            <div class="hamburger-menu">
+                <div class="hamburger-icon"></div>
+            </div>
+            <h1>Training Department</h1>
+        </header>
+        <div class="container">
+            <!-- Add your department-specific content here -->
+            <p>Welcome to the Training Department page.</p>
+        </div>
+    </div>
+    <div class="container">
+        <!-- Add your department-specific content here -->
+        <p>Welcome to the Facilities Management Department page.</p>
+        <!-- Example: List of uploaded files for Facilities Management Department -->
+        <h2>Uploaded Files</h2>
+        <ul>
+            <li><a href="#">File 1</a></li>
+            <li><a href="#">File 2</a></li>
+            <!-- Add more files as needed -->
+        </ul>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('.hamburger-icon').click(function() {
+                $('.sidebar').toggleClass('active');
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supply Department</title>
+    <link rel="stylesheet" href="supply_send_to_admin.css">
+</head>
+<body>
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <h2>Menu</h2>
+        <ul>
+            <li><a href="supply_department.html">Send to Admin</a></li>
+            <li><a href="supply_document.html">Documents</a></li>
+        </ul>
+    </aside>
+
+    <!-- Content -->
+    <div class="content">
+        <header>
+            <div class="hamburger-menu">
+                <div class="hamburger-icon"></div>
+            </div>
+            <h1>Send Document to an Admin</h1>
+        </header>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('.hamburger-icon').click(function() {
+                $('.sidebar').toggleClass('active');
+            });
+        });
+    </script>
+</body>
+</html>
