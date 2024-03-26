@@ -1,0 +1,344 @@
+/* Reset default margin and padding */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #0b470bf8; /* Green background color */
+    margin: 0; /* Reset default margin */
+    padding: 0; /* Reset default padding */
+}
+
+/* Style for the image */
+img {
+    display: block;
+    margin-left: 200px; /* Adjust this value to move the image to the left */
+}
+
+/* Hide the default file input */
+.file-upload input[type="file"] {
+    display: none;
+}
+
+/* Style for custom file upload button */
+.file-upload {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+}
+
+/* Style for custom file input */
+#fileInput {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* Style for input fields in folder-create and search */
+.folder-create input[type="text"],
+.search input[type="text"] {
+    margin-bottom: 20px; /* Add space at the bottom */
+    width: calc(100% - 80px); /* Adjust input width */
+    padding: 20px;
+    background-color: #078d0765;
+    border: 1px solid #f7f7f7;
+    border-radius: 5px;
+    margin-right: 10px; /* Add some space between input and button */
+}
+
+/* Style for buttons in folder-create and search */
+.folder-create button,
+.search button {
+    padding: 10px 20px; /* Adjust button padding */
+    background-color: #078d196c; /* Button background color */
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px; /* Adjust the margin-top */
+}
+
+/* Container styles */
+.container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 80%; /* Adjust the width as needed */
+    height: 80%; /* Adjust the height as needed */
+    margin: 10%; /* Adjust the margin as needed for centering */
+    text-align: center; /* Center align content */
+}
+
+/* Sidebar styles */
+.sidebar {
+    width: 250px;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: -250px; /* Hide sidebar by default */
+    background-color: #33333385;
+    color: #fff;
+    padding: 20px;
+    transition: left 0.3s ease; /* Add transition for smooth animation */
+}
+
+/* Button styles */
+.upload-file-btn,
+.create-folder-btn,
+.search-btn {
+    padding: 20px 40px; /* Adjust button padding */
+    background-color: #078d196c; /* Button background color */
+    color: #ffffff; /* Button text color */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline-block; /* Display buttons as inline-block elements */
+    width: 200px; /* Set button width */
+    margin-right: 20px; /* Add space between buttons */
+    text-align: center; /* Center align button text */
+    margin-bottom: 20px; /* Add some space between buttons and bottom */
+}
+
+/* Hover styles for buttons */
+.upload-file-btn:hover,
+.create-folder-btn:hover,
+.search-btn:hover {
+    background-color: #078d19; /* Change background color on hover */
+}
+
+/* Styles for container */
+.container {
+    width: 100%;
+    position: absolute;
+    top: 20px; /* Adjust as needed */
+    text-align: center; /* Align content to the center */
+}
+
+/* User Dashboard CSS */
+.container {
+    display: flex;
+}
+
+.sidebar {
+    width: 200px;
+    background-color: #0000008e;
+    padding: 20px;
+}
+
+.sidebar h1 {
+    margin-top: 40px; /* Adjust the margin-top as needed */
+    font-size: 24px;
+    text-align: center;
+}
+
+.nav-btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 5px;
+    background-color: #0f7e15;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.nav-btn:hover {
+    background-color: #37c712;
+}
+
+.logout-btn {
+    padding: 10px 20px;
+    background-color: #078d196c;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    position: fixed;
+    bottom: 50px; /* Adjust the distance from the bottom as needed */
+    left: 20px; /* Adjust the distance from the left as needed */
+}
+
+/* Hamburger menu styles */
+.hamburger-menu {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    cursor: pointer;
+    z-index: 1001; /* Ensure hamburger menu is above the sidebar */
+}
+
+.line {
+    width: 30px;
+    height: 3px;
+    background-color: #fff;
+    margin: 5px;
+}
+
+.show-menu {
+    position: fixed;
+    top: 20px;
+    left: 50px; /* Adjust the position as needed */
+    cursor: pointer;
+    z-index: 1001; /* Ensure it's above other elements */
+    color: #ffffff;
+    font-size: 16px;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+/* Show sidebar animation */
+.show-sidebar {
+    left: 0; /* Slide sidebar into view */
+}
+
+/* Clock styles */
+.clock-container {
+    margin-top: 10px;
+    margin-bottom: 30px;
+    background-color: #153d0d5e;
+    border-radius: 5px;
+    padding: 10px 5px;
+    box-shadow: 1px 1px 5px rgba(255, 255, 255, 0), 0 15px 90px 30px rgba(4, 75, 10, 0);
+    display: flex;
+    position: fixed;
+    top: 10px;
+    right: 20px;
+}
+
+.clock-col {
+    text-align: center;
+    margin-right: 40px;
+    margin-left: 25px;
+    min-width: 30px;
+    position: relative;
+}
+
+.clock-col:not(:last-child):before,
+.clock-col:not(:last-child):after {
+    content: "";
+    background-color: rgba(0, 0, 0, 0.692);
+    height: 5px;
+    width: 5px;
+    border-radius: 50%;
+    display: block;
+    position: absolute;
+    right: -42px;
+}
+
+.clock-col:not(:last-child):before {
+    top: 35%;
+}
+
+.clock-col:not(:last-child):after {
+    top: 60%;
+}
+
+.clock-timer:before {
+    color: #fff;
+    font-size: 4.2rem;
+    text-transform: uppercase;
+}
+
+.clock-label {
+    color: rgba(236, 226, 226, 0.911);
+    text-transform: uppercase;
+    font-size: .7rem;
+    margin-top: 10px;
+}
+
+.files-container {
+    position: fixed;
+    bottom: 20px; /* Adjust the distance from the bottom */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #197c0caf; /* Add your desired background color */
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%; /* Adjust the width as needed */
+    max-width: 900px; /* Optionally, set a maximum width */
+}
+
+/* Notification dropdown styles */
+/* Notification Bell styles */
+.notification-bell {
+    position: fixed;
+    top: 150px;
+    right: 30px;
+    cursor: pointer;
+  }
+  .notification-label {
+    position: absolute;
+    bottom: -30px; /* Adjust as needed */
+    right: -20px; /* Adjust as needed */
+    color: rgb(14, 12, 12);
+    border-radius: 50%;
+    padding: 5px;
+    font-size: 12px;
+    font-weight: bold;
+}
+  
+  .notification-bell img {
+    width: 30px; /* Adjust the size of the bell image */
+  }
+  
+  /* Modal styles */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+  
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+  }
+  
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  /* Notification Image styles */
+  .notification-image {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    max-height: 100%;
+  }
+  
+/* Media query for smaller screens */
+@media screen and (max-width: 768px) {
+    .hamburger-menu {
+        top: 10px;
+        left: 10px;
+    }
+}
+
+/* Media query for even smaller screens */
+@media screen and (max-width: 480px) {
+    .hamburger-menu {
+        top: 5px;
+        left: 5px;
+    }
+}
