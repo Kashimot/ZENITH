@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Dashboard</title>
+<link rel="stylesheet" href="CSS/admin.css">
+</head>
+<body>
+
+<div class="container">
+    <div class="dashboard-container">
+        <h2>Welcome, Admin!</h2>
+
+        <!-- Approved Sellers -->
+        <h3>Approved Sellers</h3>
+        <div class="approved-sellers">
+            <!-- Example seller with approve and ban buttons -->
+            <div class="seller">
+                <p>Seller Name: John Doe</p>
+                <p>Email: john@example.com</p>
+                <button class="approve-btn">Approve</button>
+                <button class="ban-btn">Ban</button>
+            </div>
+            <!-- Repeat this structure for each approved seller -->
+        </div>
+
+        <!-- Banned/Rejected Sellers -->
+        <h3>Banned/Rejected Sellers</h3>
+        <div class="banned-sellers">
+            <!-- Example banned/rejected seller -->
+            <div class="seller">
+                <p>Seller Name: Jane Smith</p>
+                <p>Email: jane@example.com</p>
+                <p>Status: Banned</p>
+            </div>
+            <!-- Repeat this structure for each banned/rejected seller -->
+        </div>
+
+        <!-- Add New Admin -->
+        <h3>Add New Admin</h3>
+        <form id="add_admin_form" action="add_admin.php" method="POST">
+            <input type="text" name="admin_username" placeholder="Admin Username" required>
+            <input type="password" name="admin_password" placeholder="Admin Password" required>
+            <button type="submit">Add Admin</button>
+        </form>
+    </div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="admin.js"></script>
+
+</body>
+</html>
