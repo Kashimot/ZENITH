@@ -1,0 +1,97 @@
+/* CSS for admin dashboard */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.dashboard-container {
+    background-color: #D9EDBF; /* Light green */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Styling for Add New Admin section */
+#add_admin_form {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#add_admin_form h3 {
+    margin-bottom: 10px;
+    font-size: 24px;
+    color: #333;
+}
+
+#add_admin_form input[type="text"],
+#add_admin_form input[type="password"],
+#add_admin_form button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+#add_admin_form button[type="submit"] {
+    background-color: #2C7865;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+#add_admin_form button[type="submit"]:hover {
+    background-color: #225d4d;
+}
+
+/* Error message style */
+.error-message {
+    color: #FF0000; /* Red */
+}
+/* CSS for top navigation bar */
+.top-nav {
+    background-color: #2C7865;
+    color: #fff;
+}
+
+.top-nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.top-nav .logo {
+    font-size: 24px;
+}
+
+.top-nav .nav-links {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.top-nav .nav-links li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.top-nav .nav-links li:last-child {
+    margin-right: 0;
+}
+
+.top-nav .nav-links li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.top-nav .nav-links li a:hover {
+    text-decoration: underline;
+}

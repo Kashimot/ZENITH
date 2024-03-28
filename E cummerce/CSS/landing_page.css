@@ -1,79 +1,119 @@
-/* Navbar styles */
+/* Reset default styles */
+body, h1, h2, h3, p, ul, li, input, select, button {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
 .navbar {
-    background-color: #333;
-    color: #fff;
+    background-color: #2C7865;
     padding: 10px 0;
 }
 
 .navbar .container {
     display: flex;
-    justify-content: space-between;
     align-items: center;
 }
 
-.navbar .logo {
+.logo {
+    color: #fff;
     font-size: 24px;
+    font-weight: bold;
 }
 
-.navbar .nav-links {
+.nav-links {
     list-style-type: none;
-    margin: 0;
-    padding: 0;
+    margin-left: auto;
 }
 
-.navbar .nav-links li {
-    display: inline-block;
+.nav-links li {
+    display: inline;
+}
+
+.nav-links li:not(:last-child) {
     margin-right: 20px;
 }
 
-.navbar .nav-links li:last-child {
-    margin-right: 0;
-}
-
-.navbar .nav-links li a {
+.nav-links a {
     color: #fff;
     text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
 }
 
-/* Seller option styles */
-.seller-option {
-    margin-top: 50px;
+.product-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.product-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 300px;
+}
+
+.product-card img {
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+.product-card h3 {
+    margin-top: 10px;
+    font-size: 18px;
+    color: #333;
+}
+
+.product-card p {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #666;
+}
+
+.login-prompt {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
     text-align: center;
+    margin-top: 20px;
 }
 
-.seller-option p {
+.login-prompt h2 {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.login-prompt p {
     margin-bottom: 20px;
+    color: #666;
 }
 
-.become-seller-btn {
+.sign-in-btn {
     padding: 10px 20px;
-    background-color: #007bff;
+    background-color: #2C7865;
     color: #fff;
     border: none;
     border-radius: 5px;
-    cursor: pointer;
+    text-decoration: none;
     font-size: 16px;
+    transition: background-color 0.3s ease;
 }
 
-.become-seller-btn:hover {
-    background-color: #0056b3;
-}
-
-/* Admin login area styles */
-.admin-login-area {
-    display: none;
-    margin-top: 50px;
-}
-
-.admin-login-area h2 {
-    text-align: center;
-}
-
-.admin-login-area form {
-    text-align: center;
-}
-
-/* Toggle visibility of admin login area */
-.admin-login-visible .admin-login-area {
-    display: block;
+.sign-in-btn:hover {
+    background-color: #225d4d;
 }

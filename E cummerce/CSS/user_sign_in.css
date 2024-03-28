@@ -1,0 +1,116 @@
+/* General styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Top navigation styles */
+.top-nav {
+    background-color: #2C7865;
+    color: #fff;
+}
+
+.top-nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.top-nav .logo {
+    font-size: 24px;
+}
+
+.top-nav .nav-links {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.top-nav .nav-links li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.top-nav .nav-links li:last-child {
+    margin-right: 0;
+}
+
+.top-nav .nav-links li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.top-nav .nav-links li a:hover {
+    text-decoration: underline;
+}
+
+/* Sign up form styles */
+.signup-container {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.signup-container h2 {
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.signup-container input[type="text"],
+.signup-container input[type="email"],
+.signup-container input[type="password"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.signup-container input[type="text"]:focus,
+.signup-container input[type="email"]:focus,
+.signup-container input[type="password"]:focus {
+    border-color: #4CAF50;
+}
+
+.signup-container button {
+    width: calc(100% - 20px);
+    padding: 12px;
+    margin: 20px 0;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    outline: none;
+    transition: background-color 0.3s ease;
+}
+
+.signup-container button:hover {
+    background-color: #45a049;
+}
+
+.signup-container p {
+    margin-top: 10px;
+}
+
+.signup-container p a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.signup-container p a:hover {
+    text-decoration: underline;
+}

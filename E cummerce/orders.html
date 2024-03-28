@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Orders</title>
+<link rel="stylesheet" href="CSS/orders.css"> <!-- Link to your CSS file -->
+</head>
+<body>
+
+<nav class="top-nav">
+    <div class="container">
+        <div class="logo">Admin Dashboard</div>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Products</a></li>
+            <li><a href="#">Orders</a></li>
+            <li><a href="#">Users</a></li>
+            <li><a href="add_product.html">Add Product</a></li>
+            <li><a href="user_list.html">User List</a></li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="order-list-container">
+        <h2>Orders</h2>
+        <!-- Order list will be displayed here -->
+        <table class="order-list">
+            <thead>
+                <tr>
+                    <th>Order ID</th>
+                    <th>Customer Name</th>
+                    <th>Product Name</th>
+                    <th>Quantity</th>
+                    <th>Total Price</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>John Doe</td>
+                    <td>Product A</td>
+                    <td>2</td>
+                    <td>$50.00</td>
+                    <td>Pending</td>
+                    <td>
+                        <button class="approve-btn">Approve</button>
+                        <button class="reject-btn">Reject</button>
+                    </td>
+                </tr>
+                <!-- Add more orders here -->
+            </tbody>
+        </table>
+    </div>
+</div>
+
+</body>
+</html>

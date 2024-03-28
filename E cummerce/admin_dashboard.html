@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Dashboard</title>
+<link rel="stylesheet" href="CSS/admin_dashboard.css">
+</head>
+<body>
+
+<nav class="top-nav">
+    <div class="container">
+        <div class="logo">Admin Dashboard</div>
+        <ul class="nav-links">
+            <li><a href="landing_page.html">Home</a></li>
+            <li><a href="add_product.html">Products</a></li>
+            <li><a href="#">Orders</a></li>
+            <li><a href="user_list.html">Users</a></li>
+            <li><a href="add_product.html">Add Product</a></li> <!-- Link to add_product.html -->
+        </ul>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="dashboard-container">
+        <h2>Welcome, Admin!</h2>
+
+        <!-- Add New Admin -->
+        <h3>Add New Admin</h3>
+        <form id="add_admin_form" action="add_admin.php" method="POST">
+            <input type="text" name="admin_username" placeholder="Admin Username" required>
+            <input type="password" name="admin_password" placeholder="Admin Password" required>
+            <button type="submit">Add Admin</button>
+        </form>
+    </div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="admin.js"></script>
+<script src="admin_product.js"></script>
+
+</body>
+</html>

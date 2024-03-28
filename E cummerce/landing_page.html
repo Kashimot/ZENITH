@@ -10,63 +10,32 @@
 
 <nav class="navbar">
     <div class="container">
-        <div class="logo">E-Commerce</div>
+        <div class="logo">Green Thumb Shop</div>
         <ul class="nav-links">
             <li><a href="#">Home</a></li>
             <li><a href="#">Products</a></li>
             <li><a href="#">About</a></li>
             <li><a href="#">Contact</a></li>
-            <li><a href="#" class="become-seller">Become a Seller</a></li>
-            <li><a href="admin.html" class="admin-login">Admin Login</a></li>
+            <li><a href="admin_login.html" class="admin-login">Admin Login</a></li>
         </ul>
     </div>
 </nav>
 
 <div class="container">
-    <div class="login-container">
-        <h2>Login</h2>
-        <form action="#" method="POST">
-            <input type="text" name="username" placeholder="Username" required>
-            <input type="password" name="password" placeholder="Password" required>
-            <select name="usertype" required>
-                <option value="" disabled selected>Select User Type</option>
-                <option value="user">User</option>
-                <option value="seller">Seller</option>
-                <option value="admin">Admin</option>
-            </select>
-            <button type="submit">Login</button>
-        </form>
-    </div>
-    
-    <div class="signup-container">
-        <h2>Sign Up</h2>
-        <form action="#" method="POST">
-            <input type="text" name="username" placeholder="Username" required>
-            <input type="email" name="email" placeholder="Email" required>
-            <input type="password" name="password" placeholder="Password" required>
-            <select name="usertype" required>
-                <option value="" disabled selected>Select User Type</option>
-                <option value="user">User</option>
-                <option value="seller">Seller</option>
-                <option value="admin">Admin</option>
-            </select>
-            <button type="submit">Sign Up</button>
-        </form>
+    <div class="product-gallery">
+        <!-- Product Cards will be displayed here -->
+        <div class="product-card">
+            <img src="C:\Users\HP 348\OneDrive\Desktop\E cummerce\IMG\1.jpeg" alt="Product Image">
+            <h3>Small Shovel</h3>
+            <p>Reliable OL</p>
+            <button>View Details</button>
+        </div>
     </div>
 
-    <div class="seller-option">
-        <h2>Become a Seller</h2>
-        <p>Are you interested in selling your products on our platform? Click below to become a seller.</p>
-        <button class="become-seller-btn">Become a Seller</button>
-    </div>
-
-    <div class="admin-login-area">
-        <h2>Admin Login</h2>
-        <form action="#" method="POST">
-            <input type="text" name="admin_username" placeholder="Admin Username" required>
-            <input type="password" name="admin_password" placeholder="Admin Password" required>
-            <button type="submit">Login as Admin</button>
-        </form>
+    <div class="login-prompt">
+        <h2>Sign in to view more</h2>
+        <p>Please sign in to view more products and make purchases.</p>
+        <a href="#" class="sign-in-btn">Sign In</a>
     </div>
 </div>
 

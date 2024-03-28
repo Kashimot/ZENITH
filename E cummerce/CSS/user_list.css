@@ -1,0 +1,45 @@
+/* CSS for top navigation bar */
+.top-nav {
+    background-color: #2C7865;
+    color: #fff;
+}
+
+.top-nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.top-nav .logo {
+    font-size: 24px;
+}
+
+.top-nav .nav-links {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.top-nav .nav-links li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.top-nav .nav-links li:last-child {
+    margin-right: 0;
+}
+
+.top-nav .nav-links li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.top-nav .nav-links li a:hover {
+    text-decoration: underline;
+}
+
+/* CSS for user list */
+.user-list-container {
+    max-width: 600px
+}
