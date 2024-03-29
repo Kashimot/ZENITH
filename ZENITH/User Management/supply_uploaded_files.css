@@ -262,8 +262,8 @@ button[type="submit"]:hover {
 }
 
 button[type="submit"] {
-    background-color: #0e5c0e;
-    color: #f6fdf5;
+    background-color: #0a3f0a;
+    color: #46ad38;
     border: none;
     padding: 10px 20px;
     font-size: 16px;
@@ -274,23 +274,62 @@ button[type="submit"] {
 button[type="submit"]:hover {
     background-color: #2ba705;
 }
-.approval-status {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-}
-
-.approval-status th, .approval-status td {
+/* Container styles */
+.container {
+    background-color: #fff;
     border: 1px solid #ccc;
-    padding: 8px;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Prevent content from overflowing */
 }
 
-.approval-status th {
+.container h2 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #333;
+    cursor: pointer;
+}
+
+/* Form styles */
+.container form {
+    margin-bottom: 10px;
+}
+
+.container form input[type="text"],
+.container form button {
+    padding: 10px;
+    margin-right: 100px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.container form button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.container form button:hover {
+    background-color: #45a049;
+}
+
+/* File and folder list styles */
+#fileList {
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+/* File and folder item styles */
+.file-item {
+    margin-bottom: 10px;
+    padding: 10px;
     background-color: #f2f2f2;
-    font-weight: bold;
-    text-align: left;
+    border-radius: 5px;
 }
 
-.approval-status td {
-    text-align: center;
+.file-item:hover {
+    background-color: #e0e0e0;
 }

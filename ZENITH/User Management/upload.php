@@ -1,75 +1,37 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>File Upload</title>
-<link rel="stylesheet" href="upload.css">
-</head>
-<body>
+<?php
+$targetDir = "uploads/";
+$targetFile = $targetDir . basename($_FILES["fileToUpload"]["name"]);
+$uploadOk = 1;
+$imageFileType = strtolower(pathinfo($targetFile,PATHINFO_EXTENSION));
 
-<div class="container">
-  <div class="sidebar">
-    <h2>Sidebar</h2>
-    <button class="create-folder-btn" onclick="window.location.href = 'create.php'">Folder</button>
-    <button class="search-btn" onclick="window.location.href = 'search.php'">Search</button>
-  </div>
-  
-  <div class="content">
-    <div class="upload-form">
-      <h2>Upload File</h2>
-      <form action="upload_document.php" method="post" enctype="multipart/form-data">
-        <input type="file" name="fileToUpload" id="fileToUpload" onchange="updateFileName(this)">
-        <input type="text" name="fileName" id="fileName" placeholder="File Name (Optional)">
-        <input type="text" name="author" id="author" placeholder="Author's Name">
-        <input type="submit" value="Upload File" name="submit">
-      </form>
-    </div>
+// Check if file already exists
+if (file_exists($targetFile)) {
+    echo "Sorry, file already exists.";
+    $uploadOk = 0;
+}
 
-    <!-- Uploaded documents section -->
-    <div class="uploaded-documents">
-      <h2>Uploaded Documents</h2>
-      <form action="delete.php" method="post">
-        <div class="documents-container">
-          <ul id="documentList">
-            <!-- Uploaded documents will be listed here -->
-            <?php
-            // Include database connection
-            include_once 'db_connection.php';
+// Check file size
+if ($_FILES["fileToUpload"]["size"] > 500000) {
+    echo "Sorry, your file is too large.";
+    $uploadOk = 0;
+}
 
-            // Fetch uploaded documents from the database
-            $sql = "SELECT id, file_name, author FROM uploaded_files";
-            $result = mysqli_query($conn, $sql);
+// Allow certain file formats
+if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
+&& $imageFileType != "gif" ) {
+    echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+    $uploadOk = 0;
+}
 
-            if (mysqli_num_rows($result) > 0) {
-                // Output each uploaded document as a list item with checkbox
-                while ($row = mysqli_fetch_assoc($result)) {
-                    echo '<li><input type="checkbox" name="selectedFiles[]" value="' . $row['id'] . '"> ' . $row['file_name'] . ' (Author: ' . $row['author'] . ')</li>';
-                }
-            } else {
-                echo "<li>No documents uploaded yet.</li>";
-            }
-
-            // Close database connection
-            mysqli_close($conn);
-            ?>
-          </ul>
-        </div>
-        <button type="submit" name="action" value="open">Open Selected</button>
-        <button type="submit" name="action" value="delete">Delete Selected</button>
-      </form>
-    </div>
-  </div>
-</div>
-
-<script>
-  function updateFileName(input) {
-    // Get the file name from the input
-    var fileName = input.value.split('\\').pop();
-    // Display the file name in the text input
-    document.getElementById('fileName').value = fileName;
-  }
-</script>
-
-</body>
-</html>
+// Check if $uploadOk is set to 0 by an error
+if ($uploadOk == 0) {
+    echo "Sorry, your file was not uploaded.";
+// if everything is ok, try to upload file
+} else {
+    if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $targetFile)) {
+        echo "The file ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " has been uploaded.";
+    } else {
+        echo "Sorry, there was an error uploading your file.";
+    }
+}
+?>

@@ -13,6 +13,8 @@
         <ul>
             <li><a href="supply_document.html">Documents</a></li>
             <li><a href="supply_send_to_admin.html">Send to Admin</a></li>
+            <li><a href="supply_inventory.html">Inventory</a></li>
+            <li><a href="supply_uploaded_files.html">Uploaded Files</a></li>
         </ul>
     </aside>
 
@@ -27,12 +29,26 @@
         <div class="container">
             <!-- Announcements Section -->
             <section class="announcements">
-                <h2>Announcements</h2>
-                <div class="announcement">
-                    <h3>New Procurement Policy</h3>
-                    <p>We have implemented a new procurement policy. Please review the document in the Documents section for details.</p>
+                <!-- Announcements content -->
+            </section>
+
+        <!-- Featured Documents Section -->
+<section class="featured-documents">
+    <h2>Featured Documents</h2>
+    <div id="documentList">
+        <!-- Featured documents will be dynamically added here -->
+    </div>
+</section>
+
+
+            <!-- Search Functionality -->
+            <section class="search">
+                <h2>Search</h2>
+                <input type="text" id="searchInput" placeholder="Search documents">
+                <button id="searchButton">Search</button>
+                <div id="searchResults">
+                    <!-- Search results will be displayed here -->
                 </div>
-                <!-- Add more announcements as needed -->
             </section>
 
             <!-- Notification button -->
@@ -96,6 +112,47 @@
             var modal = document.getElementById("notificationPopup");
             modal.classList.remove("active");
         }
+        $(document).ready(function() {
+    // Search button click event handler
+    $('#searchButton').click(function() {
+        var query = $('#searchInput').val(); // Get the search query
+        searchDocuments(query); // Call the search function
+    });
+});
+
+function searchDocuments(query) {
+    $.ajax({
+        url: 'search_documents.php', // URL to your server-side script for searching documents
+        type: 'POST',
+        data: { query: query }, // Send the search query to the server
+        success: function(response) {
+            // Update the search results section with the response
+            $('#searchResults').html(response);
+        },
+        error: function(xhr, status, error) {
+            console.error('Error searching documents:', error);
+        }
+    });
+}
+$(document).ready(function() {
+    // Fetch newly added documents
+    fetchNewDocuments();
+
+    // Function to fetch newly added documents
+    function fetchNewDocuments() {
+        $.ajax({
+            url: 'fetch_new_documents.php', // URL to your server-side script for fetching new documents
+            type: 'GET',
+            success: function(response) {
+                // Append the fetched documents to the document list
+                $('#documentList').append(response);
+            },
+            error: function(xhr, status, error) {
+                console.error('Error fetching new documents:', error);
+            }
+        });
+    }
+});
     </script>
 </body>
 </html>

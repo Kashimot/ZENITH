@@ -3,27 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Send to Admin</title>
-    <link rel="stylesheet" href="facilities_send_to_admin.css">
+    <title>Supply Department</title>
+    <link rel="stylesheet" href="supply_send_to_admin.css">
 </head>
 <body>
     <!-- Sidebar -->
     <aside class="sidebar">
         <h2>Menu</h2>
         <ul>
-            <li><a href="facilities_document.html" class="nav-btn">Documents</a></li>
-            <li><a href="facilities_management.html" class="nav-btn">Home</a></li>
+            <li><a href="facilities_document.html">Documents</a></li>
+            <li><a href="facilities_management.html">Facility Management</a></li>
+            <li><a href="facilities_uploaded_files.html">Uploaded Files</a></li>
         </ul>
     </aside>
 
-    <!-- Content -->
-    <div class="content">
-        <header>
-            <div class="hamburger-menu">
-                <div class="hamburger-icon"></div>
-            </div>
-        </header>
-    </div>
+        <!-- Content -->
+        <div class="content">
+            <header>
+                <div class="hamburger-menu">
+                    <div class="hamburger-icon"></div>
+                </div>
+            </header>
+        </div>
 
     <div class="container">
         <!-- Add your department-specific content here -->
@@ -47,20 +48,20 @@
                 }
         
                 // Fetch list of uploaded files
-$sql = "SELECT file_id, file_name FROM files"; // Assuming your files table has columns for file_id and file_name
-$result = $conn->query($sql);
+                $sql = "SELECT file_id, file_name FROM files"; // Assuming your files table has columns for file_id and file_name
+                $result = $conn->query($sql);
 
-// Check if there are any files
-if ($result->num_rows > 0) {
-    // Output data of each row
-    while ($row = $result->fetch_assoc()) {
-        // Output file name as a list item with checkbox
-        echo '<li><label><input type="checkbox" name="files[]" value="' . $row["file_id"] . '"> ' . $row["file_name"] . '</label></li>';
-    }
-} else {
-    // If no files found, display a message
-    echo "<li>No files found</li>";
-}
+                // Check if there are any files
+                if ($result->num_rows > 0) {
+                    // Output data of each row
+                    while ($row = $result->fetch_assoc()) {
+                        // Output file name as a list item with checkbox
+                        echo '<li><label><input type="checkbox" name="files[]" value="' . $row["file_id"] . '"> ' . $row["file_name"] . '</label></li>';
+                    }
+                } else {
+                    // If no files found, display a message
+                    echo "<li>No files found</li>";
+                }
 
                 // Close connection
                 $conn->close();
@@ -68,6 +69,23 @@ if ($result->num_rows > 0) {
             </ul>
             <button type="submit">Send to Admin</button>
         </form>
+
+        <!-- Add a table to display approval status -->
+<table class="approval-status">
+    <thead>
+        <tr>
+            <th>File Name</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- PHP code to fetch and display approval status -->
+        <?php
+        // Your PHP code to fetch approval status for each file and display it in the table
+        ?>
+    </tbody>
+</table>
+
         
     </div>
 

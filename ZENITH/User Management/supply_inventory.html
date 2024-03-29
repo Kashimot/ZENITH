@@ -11,9 +11,10 @@
     <aside class="sidebar">
         <h2>Menu</h2>
         <ul>
+            <li><a href="supply_department.html">Home</a></li>
+            <li><a href="supply_uploaded_files.html">Uploaded Files</a></li>
             <li><a href="supply_document.html">Documents</a></li>
             <li><a href="supply_send_to_admin.html">Send to Admin</a></li>
-            <li><a href="supply_inventory.html" class="active">Inventory Management</a></li>
             <!-- Add more relevant links as needed -->
         </ul>
     </aside>
@@ -24,18 +25,6 @@
             <div class="hamburger-menu">
                 <div class="hamburger-icon"></div>
             </div>
-            <h1>Marine Barracks Supply Inventory</h1>
-        </header>
-        <div class="container">
-            <!-- Announcements Section -->
-            <section class="announcements">
-                <h2>Announcements</h2>
-                <div class="announcement">
-                    <h3>New Procurement Policy</h3>
-                    <p>We have implemented a new procurement policy. Please review the document in the Documents section for details.</p>
-                </div>
-                <!-- Add more announcements as needed -->
-            </section>
 
             <!-- Inventory Management Section -->
             <section class="inventory-management">
@@ -52,23 +41,6 @@
                 </div>
             </section>
 
-            <!-- Notification button -->
-            <button id="notificationButton" class="notification-btn" onclick="showNotification()">Notifications</button>
-
-            <!-- Notification popup (modal) -->
-            <div id="notificationPopup" class="notification-popup">
-                <div class="modal-content">
-                    <span class="close" onclick="closeNotificationModal()">&times;</span>
-                    <h2>Notifications</h2>
-                    <!-- Notification items will be dynamically added here -->
-                    <ul id="notificationList">
-                        <!-- Notifications will be added dynamically here -->
-                    </ul>
-                    <button id="clearNotificationsButton" class="clear-btn">Clear Notifications</button>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <!-- Add New Item Form Modal -->
     <div id="addItemModal" class="modal">

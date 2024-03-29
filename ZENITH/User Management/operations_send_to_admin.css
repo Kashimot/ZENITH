@@ -274,3 +274,23 @@ button[type="submit"] {
 button[type="submit"]:hover {
     background-color: #2ba705;
 }
+.approval-status {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.approval-status th, .approval-status td {
+    border: 1px solid #ccc;
+    padding: 8px;
+}
+
+.approval-status th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+    text-align: left;
+}
+
+.approval-status td {
+    text-align: center;
+}

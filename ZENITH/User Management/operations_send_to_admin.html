@@ -3,27 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Facilities Management Department</title>
-    <link rel="stylesheet" href="operations_send_to_admin.css">
+    <title>Supply Department</title>
+    <link rel="stylesheet" href="supply_send_to_admin.css">
 </head>
 <body>
     <!-- Sidebar -->
     <aside class="sidebar">
         <h2>Menu</h2>
         <ul>
-            <li><a href="operations_department.html" class="nav-btn">Home</a></li>
-            <li><a href="operations_document.html" class="nav-btn">Documents</a></li>
+            <li><a href="operations_department.html">Send to Admin</a></li>
+            <li><a href="operations_document.html">Documents</a></li>
+            <li><a href="operations_uploaded_files.html">Uploaded Files</a></li>
         </ul>
     </aside>
 
-    <!-- Content -->
-    <div class="content">
-        <header>
-            <div class="hamburger-menu">
-                <div class="hamburger-icon"></div>
-            </div>
-        </header>
-    </div>
+        <!-- Content -->
+        <div class="content">
+            <header>
+                <div class="hamburger-menu">
+                    <div class="hamburger-icon"></div>
+                </div>
+            </header>
+        </div>
 
     <div class="container">
         <!-- Add your department-specific content here -->
@@ -68,6 +69,23 @@
             </ul>
             <button type="submit">Send to Admin</button>
         </form>
+
+        <!-- Add a table to display approval status -->
+<table class="approval-status">
+    <thead>
+        <tr>
+            <th>File Name</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- PHP code to fetch and display approval status -->
+        <?php
+        // Your PHP code to fetch approval status for each file and display it in the table
+        ?>
+    </tbody>
+</table>
+
         
     </div>
 
