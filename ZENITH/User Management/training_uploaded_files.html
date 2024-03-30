@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uploaded Files</title>
+    <link rel="stylesheet" href="supply_uploaded_files.css">
+</head>
+<body>
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <h2>Menu</h2>
+        <ul>
+            <li><a href="supply_department.html">Home</a></li>
+            <li><a href="training_document.html">Documents</a></li>
+            <li><a href="training_send_to_admin.html">Send to Admin</a></li>
+        </ul>
+    </aside>
+
+    <!-- Content -->
+    <div class="content">
+        <header>
+            <div class="hamburger-menu">
+                <div class="hamburger-icon"></div>
+            </div>
+        </header>
+    </div>
+
+    <!-- Container for file upload form -->
+<div class="container">
+    <h2>Upload File</h2>
+    <form id="uploadForm" action="upload.php" method="post" enctype="multipart/form-data">
+        <input type="file" name="fileToUpload" id="fileToUpload">
+        <button type="submit">Upload File</button>
+    </form>
+</div>
+
+<!-- Container for folder creation form -->
+<div class="container">
+    <h2>Create Folder</h2>
+    <form id="createFolderForm" action="create_folder.php" method="post">
+        <input type="text" name="folderName" placeholder="Enter folder name">
+        <button type="submit">Create Folder</button>
+    </form>
+</div>
+
+<!-- Container for file and folder list -->
+<div class="container">
+    <h2>File and Folder List</h2>
+    <div id="fileList">
+        <!-- File and folder items will be dynamically populated here -->
+    </div>
+</div>
+
+<!-- Container for file and folder operations -->
+<div class="container">
+    <h2 class="collapsible">File and Folder Operations</h2>
+    <div class="content">
+        <!-- Rename file/folder form -->
+        <form id="renameForm" action="rename.php" method="post">
+            <input type="text" name="newName" placeholder="Enter new name">
+            <button type="submit">Rename</button>
+        </form>
+
+        <!-- Search folder form -->
+        <form id="searchForm" action="search.php" method="get">
+            <input type="text" name="searchQuery" placeholder="Search folders">
+            <button type="submit">Search</button>
+        </form>
+    </div>
+</div>
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('.hamburger-icon').click(function() {
+                $('.sidebar').toggleClass('active');
+            });
+        });
+    </script>
+</body>
+</html>

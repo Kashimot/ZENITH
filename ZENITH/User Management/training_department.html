@@ -29,6 +29,21 @@
             <p>Welcome to the Training Department page.</p>
         </div>
     </div>
+    
+     <!-- Notification popup (modal) -->
+   <button class="notification-btn" onclick="showNotification()">Notification</button>
+   <div id="notificationPopup" class="notification-popup">
+     <div class="modal-content">
+         <span class="close" onclick="closeNotificationModal()">&times;</span>
+         <h2>Notifications</h2>
+         <!-- Notification items will be dynamically added here -->
+         <ul id="notificationList">
+             <!-- Notifications will be added dynamically here -->
+         </ul>
+         <button id="clearNotificationsButton" class="clear-btn" onclick="clearNotifications()">Clear Notifications</button>
+     </div>
+ </div>
+
     <div class="container">
         <!-- Add your department-specific content here -->
         <p>Welcome to the Facilities Management Department page.</p>
@@ -47,6 +62,45 @@
             $('.hamburger-icon').click(function() {
                 $('.sidebar').toggleClass('active');
             });
+        });
+         // Function to fetch notifications using AJAX
+         function fetchNotifications() {
+                $.ajax({
+                    url: 'get_notifications.php',
+                    type: 'GET',
+                    success: function(response) {
+                        var notifications = JSON.parse(response);
+                        if (notifications && notifications.length > 0) {
+                            $('#notificationList').empty();
+                            notifications.forEach(function(notification) {
+                                $('#notificationList').append('<li>' + notification.message + '</li>');
+                            });
+                        } else {
+                            $('#notificationList').html('<li>No notifications found</li>');
+                        }
+                    },
+                    error: function(xhr, status, error) {
+                        console.error('Error fetching notifications:', error);
+                    }
+                });
+            }
+        
+            // Call the fetchNotifications function initially
+            fetchNotifications();
+        function showNotification() {
+            var modal = document.getElementById("notificationPopup");
+            modal.classList.add("active");
+        }
+        
+        function closeNotificationModal() {
+            var modal = document.getElementById("notificationPopup");
+            modal.classList.remove("active");
+        }
+        
+        // Click event handler for the Clear Notifications button
+        $('#clearNotificationsButton').click(function() {
+            $('#notificationList').empty();
+            closeNotificationModal();
         });
     </script>
 </body>

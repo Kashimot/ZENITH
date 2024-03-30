@@ -1,8 +1,74 @@
-<!-- Notification form in your admin panel -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="admin_send_notifications.css">
+    <!-- Include jQuery library -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+</head>
+<body>
+    <!-- Hamburger menu -->
+    <div class="hamburger-menu">
+        <div class="hamburger-icon"></div>
+    </div>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <h2>Admin Menu</h2>
+        <ul>
+            <li><a href="admin_document_approval.html" class="nav-btn">Document Approval</a></li>
+            <li><a href="admin_document_send_document.html" class="nav-btn">Send Document</a></li>
+            <li><a href="Documents_dashboard.html" class="nav-btn">View Documents</a></li>
+            <li><a href="admin_user_management.html" class="nav-btn">User Management</a></li>
+            <li><a href="admin_facility_manage.html" class="nav-btn">Manage Facility</a></li>
+            <li><a href="admin_dashboard.html" class="nav-btn">Home</a></li>
+        </ul>
+</aside>
+
+
+<!-- Notification form -->
 <form id="notificationForm">
-    <label for="recipient">Recipient:</label>
-    <input type="text" id="recipient" name="recipient" required>
+    <label for="recipient">Recipient Department:</label>
+    <select id="recipient" name="recipient" required>
+        <option value="facilities_management">Facilities Management</option>
+        <option value="operations_department">Operations Department</option>
+        <option value="training_department">Training Department</option>
+        <option value="supply_department">Supply Department</option>
+    </select>
     <label for="message">Message:</label>
     <textarea id="message" name="message" required></textarea>
-    <button type="submit">Send Notification</button>
+    <button type="button" onclick="sendNotification()">Send Notification</button>
 </form>
+
+<script>
+    $(document).ready(function() {
+        $('.hamburger-icon').click(function() {
+            $('.sidebar').toggleClass('active');
+        });
+    });
+
+    function sendNotification() {
+    var recipient = document.getElementById("recipient").value;
+    var message = document.getElementById("message").value;
+
+    // Send notification data to server using AJAX
+    $.ajax({
+        url: 'send_notification.php',
+        type: 'POST',
+        data: { recipient: recipient, message: message },
+        success: function(response) {
+            // Handle success (optional)
+            console.log('Notification sent successfully');
+        },
+        error: function(xhr, status, error) {
+            // Handle error (optional)
+            console.error('Error sending notification:', error);
+        }
+    });
+}
+    </script>
+    </body>
+    </html>    

@@ -163,49 +163,54 @@ body, html {
     transform: rotate(-45deg);
     bottom: 0;
 }
-/* Notification Form Styles */
-#notificationForm {
-    max-width: 400px;
-    margin: 0 auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #f9f9f9;
+.admin-section {
+    margin-bottom: 20px;
 }
 
-#notificationForm label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
+.admin-section h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
 }
 
-#notificationForm select,
-#notificationForm textarea {
-    width: 100%;
+#historyTable {
+    width: 90%; /* Adjust the width as needed */
+    margin-left: auto; /* Move the table to the right */
+    margin-right: auto; /* Move the table to the right */
+    border-collapse: collapse;
+}
+
+#historyTable th, #historyTable td {
+    border: 1px solid #ddd;
     padding: 8px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box;
-    font-size: 16px;
+    text-align: left;
 }
 
-#notificationForm textarea {
-    height: 100px;
+#historyTable th {
+    background-color: #f2f2f2;
 }
 
-#notificationForm button {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    background-color: #4CAF50;
+#historyTable tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#historyTable tbody tr:hover {
+    background-color: #ddd;
+}
+
+#historyTable button {
+    background-color: #ff4d4d;
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 4px;
+    padding: 6px 12px;
     cursor: pointer;
-    font-size: 16px;
 }
 
-#notificationForm button:hover {
-    background-color: #45a049;
+#historyTable button:hover {
+    background-color: #ff6666;
+}
+.admin-section h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    text-align: center; /* Align the heading text to the center */
 }

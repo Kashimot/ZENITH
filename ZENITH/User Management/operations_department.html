@@ -62,20 +62,19 @@
         </div>
     </div>
 
-  <!-- Notification popup (modal) -->
-  <button class="notification-btn" onclick="showNotification()">Notification</button>
-
-  <div id="notificationPopup" class="notification-popup">
-    <div class="modal-content">
-        <span class="close" onclick="closeNotificationModal()">&times;</span>
-        <h2>Notifications</h2>
-        <!-- Notification items will be dynamically added here -->
-        <ul id="notificationList">
-            <!-- Notifications will be added dynamically here -->
-        </ul>
-        <button id="clearNotificationsButton" class="clear-btn">Clear Notifications</button>
-    </div>
-</div>
+   <!-- Notification popup (modal) -->
+   <button class="notification-btn" onclick="showNotification()">Notification</button>
+   <div id="notificationPopup" class="notification-popup">
+     <div class="modal-content">
+         <span class="close" onclick="closeNotificationModal()">&times;</span>
+         <h2>Notifications</h2>
+         <!-- Notification items will be dynamically added here -->
+         <ul id="notificationList">
+             <!-- Notifications will be added dynamically here -->
+         </ul>
+         <button id="clearNotificationsButton" class="clear-btn" onclick="clearNotifications()">Clear Notifications</button>
+     </div>
+ </div>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -182,10 +181,9 @@
                     url: 'get_notifications.php',
                     type: 'GET',
                     success: function(response) {
-                        // Parse JSON response and update the notification list
                         var notifications = JSON.parse(response);
                         if (notifications && notifications.length > 0) {
-                            $('#notificationList').empty(); // Clear previous notifications
+                            $('#notificationList').empty();
                             notifications.forEach(function(notification) {
                                 $('#notificationList').append('<li>' + notification.message + '</li>');
                             });
@@ -198,25 +196,26 @@
                     }
                 });
             }
-
+        
             // Call the fetchNotifications function initially
             fetchNotifications();
         });
-
+        
         function showNotification() {
             var modal = document.getElementById("notificationPopup");
             modal.classList.add("active");
         }
-
+        
         function closeNotificationModal() {
             var modal = document.getElementById("notificationPopup");
             modal.classList.remove("active");
         }
-         // Click event handler for the Clear Notifications button
-    $('#clearNotificationsButton').click(function() {
-        $('#notificationList').empty(); // Clear the notifications list
-        closeNotificationModal(); // Close the notification popup
-    });
+        
+        // Click event handler for the Clear Notifications button
+        $('#clearNotificationsButton').click(function() {
+            $('#notificationList').empty();
+            closeNotificationModal();
+        });
 
     // AJAX request to fetch and populate the list of available facilities
     $.ajax({

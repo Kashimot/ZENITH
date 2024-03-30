@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Marine Barracks Supply Inventory</title>
+    <title>Supply and Inventory</title>
     <link rel="stylesheet" href="supply_inventory.css">
 </head>
 <body>
@@ -30,7 +30,6 @@
             <section class="inventory-management">
                 <h2>Inventory Management</h2>
                 <div class="inventory-actions">
-                    <button id="refreshInventoryBtn">Refresh Inventory</button>
                     <button id="addNewItemBtn">Add New Item</button>
                     <button id="exportInventoryBtn">Export Inventory</button>
                     <input type="text" id="searchInventory" placeholder="Search Inventory">
@@ -67,6 +66,58 @@
             <!-- Add more export options as needed -->
         </div>
     </div>
+
+    <!-- User Input Form -->
+    <section class="user-input">
+        <h2>Borrow Item</h2>
+        <form id="borrowForm" action="submit_borrow_request.php" method="post">
+            <label for="borrowerName">Borrower's Name:</label>
+            <input type="text" id="borrowerName" name="borrowerName" required>
+            
+            <label for="borrowDateTime">Borrow Date and Time:</label>
+            <input type="datetime-local" id="borrowDateTime" name="borrowDateTime" required>
+            
+            <label for="itemType">Item Type:</label>
+            <select id="itemType" name="itemType" required>
+                <option value="">Select Item Type</option>
+                <option value="ammo">Ammo (Kilos)</option>
+                <option value="m16">M16 Rifle</option>
+                <option value="m4">M4 Carbine</option>
+                <option value="m9">M9 Pistol</option>
+                <option value="m240">M240 Machine Gun</option>
+                <!-- Add more gun options as needed -->
+                <option value="gasoline">Gasoline</option>
+                <option value="other">Other</option>
+            </select>
+            
+            <label for="itemBorrowed">Item Borrowed:</label>
+            <input type="text" id="itemBorrowed" name="itemBorrowed" required>
+            
+            <button type="submit">Send Request to Admin</button>
+        </form>
+    </section>
+    
+
+
+    <!-- History Section -->
+<section class="borrow-history">
+    <h2>Borrow History</h2>
+    <table id="historyTable">
+        <thead>
+            <tr>
+                <th>Item Name</th>
+                <th>Borrower Name</th>
+                <th>Borrow Date</th>
+                <th>Return Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Borrow history will be displayed here -->
+        </tbody>
+    </table>
+</section>
+
+
 
     <!-- Add more modals, forms, and features as needed -->
 
