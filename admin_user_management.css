@@ -1,0 +1,360 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    background-color: #627254;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 250px;
+    background-color: #76885B;
+    color: #fff;
+    overflow-y: auto;
+}
+
+.sidebar header {
+    padding: 20px;
+    text-align: center;
+}
+
+.sidebar nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar nav ul li {
+    padding: 10px 20px;
+}
+
+.sidebar nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.content {
+    margin-left: 250px;
+    padding: 20px;
+}
+
+.content section {
+    margin-bottom: 20px;
+}
+
+/* Sidebar styles */
+.sidebar {
+    background-color: #163020;
+    width: 200px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: -200px; /* Initially hidden */
+    transition: left 0.3s ease;
+}
+
+.sidebar.active {
+    left: 0; /* Visible when active */
+}
+
+.sidebar h2 {
+    padding: 20px;
+}
+
+.sidebar ul {
+    margin-top: 100px;
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin-top: 20px;
+}
+
+.sidebar ul li a {
+    margin-left: 10px;
+    display: block;
+    width: 150px;
+    padding: 10px;
+    text-align: center;
+    background-color: #304D30;
+    color: #fbff00;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.sidebar ul li a:hover {
+    background-color: #fce30085;
+}
+
+/* Hamburger menu styles */
+.hamburger-menu {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 999; /* Ensure it's above other elements */
+}
+.menu-label {
+    font-weight: bold;
+    font-size: 20px;
+    color: #e9d30b; /* Adjust color as needed */
+    position: absolute; /* Set position to absolute */
+    top: -5px; /* Adjust top position to place it at the very top */
+    left: 50px; /* Adjust left position to position it beside the hamburger menu */
+}
+
+
+
+
+.hamburger-icon {
+    width: 40px;
+    height: 5px;
+    background-color: #fbff00;
+    position: relative;
+    transition: background-color 0.3s ease;
+}
+
+.hamburger-icon:before,
+.hamburger-icon:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background-color: #fbff00;
+    transition: transform 0.3s ease;
+}
+
+.hamburger-icon:before {
+    top: -10px;
+}
+
+.hamburger-icon:after {
+    bottom: -10px;
+}
+
+/* Rotate lines to form X icon when active */
+.hamburger-menu.active .hamburger-icon {
+    background-color: transparent;
+}
+
+.hamburger-menu.active .hamburger-icon:before {
+    transform: rotate(45deg);
+    top: 0;
+}
+
+.hamburger-menu.active .hamburger-icon:after {
+    transform: rotate(-45deg);
+    bottom: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+.container {
+    margin-top: 20px;
+    width: 300px;
+    padding: 20px;
+    margin-left: 250px;
+    background-color: #163020;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.container h1 {
+    font-weight: bold   ;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #ffe603;
+}
+
+#addUserForm {
+    margin-bottom: 20px;
+}
+
+#addUserForm label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+    color: #ffe603;
+}
+
+#addUserForm input[type="text"],
+#addUserForm input[type="password"],
+#addUserForm select {
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #627254;
+    color: #e9d30b;
+    width: 300px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #fde403;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+#addUserForm button[type="submit"] {
+    font-weight: bold;
+    background-color: #304D30;
+    color: rgb(243, 208, 9);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+    margin-left: 50px;
+    margin-top: 20px;
+    width: 200px;
+}
+
+#addUserForm button[type="submit"]:hover {
+    background-color: #419b64;
+}
+
+/* CSS */
+#userListContainer {
+    font-family: Times New Roman;
+    font-size: 14px;
+    color: #facc00;
+    position: fixed;
+    top: 1px;
+    right: 100px;
+    text-align: left;
+    font-weight: bold;
+    margin-top: 20px;
+    width: 550px;
+    padding: 15px;
+    background-color: #163020;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+#userListContainer h2 {
+   text-align: center;
+   margin-bottom: 40px;
+}
+
+#adminListContainer {
+    text-align: center;
+    color: #f5bd08;
+    margin-left: 250px;
+    width: 300px;
+    text-align: left;
+    font-weight: bold;
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #163020;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#adminListContainer h2 {
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 24px;
+    color: #fce303;
+    margin-bottom: 10px;
+}
+
+#adminList {
+    list-style-type: none;
+    padding: 0;
+}
+
+#adminList li {
+    margin-bottom: 20px;
+}
+
+#adminList li button {
+    font-weight: bold;
+    margin-left: 10px;
+    padding: 5px 10px;
+    border: none;
+    background-color: #f5bd08;
+    color: #304D30;
+    cursor: pointer;
+}
+
+#adminList li button:hover {
+    background-color: #c23816;
+}
+
+li {
+    margin-bottom: 20px;
+}
+
+.update-btn,
+.delete-btn {
+    font-weight: bold;
+    background-color: #f5bd08;
+    color: #304D30;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-left: 15px;
+}
+
+.update-btn:hover,
+.delete-btn:hover {
+    background-color: #d32f2f;
+}
+
+/* Pagination Controls */
+#paginationControls {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+#paginationControls button {
+    font-weight: bold;
+    padding: 10px 15px;
+    background-color: #4d4d30;
+    color: rgb(240, 224, 9);
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    margin: 0 5px;
+    transition: background-color 0.3s ease;
+}
+
+#paginationControls button:hover {
+    background-color: #3ae4b98c;
+}
+
+#paginationControls button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+/* Page Indicator */
+.pageIndicator {
+    font-size: 18px;
+    margin: 0 10px;
+}
+
+/* Page Navigation */
+.pageNavigation {
+    display: flex;
+    align-items: center;
+}
+
+.pageNavigation label {
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+.pageNavigation select {
+    padding: 8px;
+    border-radius: 4px;
+}
+
+

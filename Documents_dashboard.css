@@ -1,0 +1,200 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    background-color: #627254;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 250px;
+    background-color: #76885B;
+    color: #fff;
+    overflow-y: auto;
+}
+
+.sidebar header {
+    padding: 20px;
+    text-align: center;
+}
+
+.sidebar nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar nav ul li {
+    padding: 10px 20px;
+}
+
+.sidebar nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.content {
+    margin-left: 250px;
+    padding: 20px;
+}
+
+.content section {
+    margin-bottom: 20px;
+}
+
+/* Style for logout button */
+.logout-btn .nav-btn {
+    width: 150px;
+}
+.logout-btn {
+    position: absolute;
+    bottom: 20px;
+    margin-left: 20px;
+    text-align: center;
+}
+
+.nav-btn {
+    background-color: #304D30;
+    color: #e4ebe4;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.nav-btn:hover {
+    background-color: #cc0000;
+}
+/* Sidebar styles */
+.sidebar {
+    background-color: #163020;
+    width: 200px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: -200px; /* Initially hidden */
+    transition: left 0.3s ease;
+}
+
+.sidebar.active {
+    left: 0; /* Visible when active */
+}
+
+.sidebar h2 {
+    padding: 20px;
+}
+
+.sidebar ul {
+    margin-top: 100px;
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin-top: 20px;
+}
+
+.sidebar ul li a {
+    margin-left: 10px;
+    display: block;
+    width: 150px;
+    padding: 10px;
+    text-align: center;
+    background-color: #304D30;
+    color: #fbff00;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.sidebar ul li a:hover {
+    background-color: #fce30085;
+}
+
+/* Hamburger menu styles */
+.hamburger-menu {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 999; /* Ensure it's above other elements */
+}
+.menu-label {
+    font-weight: bold;
+    font-size: 20px;
+    color: #e9d30b; /* Adjust color as needed */
+    position: absolute; /* Set position to absolute */
+    top: -5px; /* Adjust top position to place it at the very top */
+    left: 50px; /* Adjust left position to position it beside the hamburger menu */
+}
+
+
+
+
+.hamburger-icon {
+    width: 40px;
+    height: 5px;
+    background-color: #fbff00;
+    position: relative;
+    transition: background-color 0.3s ease;
+}
+
+.hamburger-icon:before,
+.hamburger-icon:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background-color: #fbff00;
+    transition: transform 0.3s ease;
+}
+
+.hamburger-icon:before {
+    top: -10px;
+}
+
+.hamburger-icon:after {
+    bottom: -10px;
+}
+
+/* Rotate lines to form X icon when active */
+.hamburger-menu.active .hamburger-icon {
+    background-color: transparent;
+}
+
+.hamburger-menu.active .hamburger-icon:before {
+    transform: rotate(45deg);
+    top: 0;
+}
+
+.hamburger-menu.active .hamburger-icon:after {
+    transform: rotate(-45deg);
+    bottom: 0;
+}
+
+/* Centered container */
+.container {
+    margin: 20px auto; /* Set top and bottom margin to 20px and horizontally center the container */
+    width: 800px; /* Adjust width as needed */
+    margin-top: 100px;
+}
+
+/* Main content styling */
+.main-content {
+    width: 800px; /* Adjust width as needed */
+    margin-top: 20px; /* Add margin to create space from the top */
+    text-align: center; /* Center the content horizontally */
+}
+
+#documentList {
+    list-style-type: none;
+    padding: 0;
+    background-color: #184b1200;
+    margin-left: 250px;
+    width: 800px;
+    padding: 25px;
+    
+}
