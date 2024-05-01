@@ -1,0 +1,432 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    background-color: #627254;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 250px;
+    background-color: #76885B;
+    color: #fff;
+    overflow-y: auto;
+}
+
+.sidebar header {
+    padding: 20px;
+    text-align: center;
+}
+
+.sidebar nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar nav ul li {
+    padding: 10px 20px;
+}
+
+.sidebar nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.content {
+    margin-left: 250px;
+    padding: 20px;
+}
+
+.content section {
+    margin-bottom: 20px;
+}
+
+/* Style for logout button */
+.logout-btn .nav-btn {
+    width: 150px;
+}
+.logout-btn {
+    position: absolute;
+    bottom: 20px;
+    margin-left: 20px;
+    text-align: center;
+}
+
+.nav-btn {
+    background-color: #304D30;
+    color: #e4ebe4;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.nav-btn:hover {
+    background-color: #cc0000;
+}
+/* Sidebar styles */
+.sidebar {
+    background-color: #163020;
+    width: 200px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: -200px; /* Initially hidden */
+    transition: left 0.3s ease;
+}
+
+.sidebar.active {
+    left: 0; /* Visible when active */
+}
+
+.sidebar h2 {
+    padding: 20px;
+}
+
+.sidebar ul {
+    margin-top: 100px;
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin-top: 20px;
+}
+
+.sidebar ul li a {
+    margin-left: 10px;
+    display: block;
+    width: 150px;
+    padding: 10px;
+    text-align: center;
+    background-color: #304D30;
+    color: #fbff00;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.sidebar ul li a:hover {
+    background-color: #fce30085;
+}
+
+/* Hamburger menu styles */
+.hamburger-menu {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 999; /* Ensure it's above other elements */
+}
+.menu-label {
+    font-weight: bold;
+    font-size: 20px;
+    color: #e9d30b; /* Adjust color as needed */
+    position: absolute; /* Set position to absolute */
+    top: -5px; /* Adjust top position to place it at the very top */
+    left: 50px; /* Adjust left position to position it beside the hamburger menu */
+}
+
+
+
+
+.hamburger-icon {
+    width: 40px;
+    height: 5px;
+    background-color: #fbff00;
+    position: relative;
+    transition: background-color 0.3s ease;
+}
+
+.hamburger-icon:before,
+.hamburger-icon:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background-color: #fbff00;
+    transition: transform 0.3s ease;
+    left: 0.1px;
+}
+
+.hamburger-icon:before {
+    top: -10px;
+}
+
+.hamburger-icon:after {
+    bottom: -10px;
+}
+
+/* Rotate lines to form X icon when active */
+.hamburger-menu.active .hamburger-icon {
+    background-color: transparent;
+}
+
+.hamburger-menu.active .hamburger-icon:before {
+    transform: rotate(45deg);
+    top: 0;
+}
+
+.hamburger-menu.active .hamburger-icon:after {
+    transform: rotate(-45deg);
+    bottom: 0;
+}
+
+.ongoing-operations {
+    margin-top: 30px;
+}
+
+.ongoing-operations #datetimeOperations {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.ongoing-operations input[type="text"] {
+    width: 200px;
+    padding: 5px;
+    margin-right: 10px;
+}
+
+#operationTable {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #343a40; /* Dark background color */
+    color: #fff; /* White text color */
+}
+
+#operationTable th, #operationTable td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+#operationTable th {
+    background-color: #163020; /* Dark background color */
+    color: #f1e206; /* White text color */
+}
+
+.ongoing-operations .end-operation-button {
+    background-color: #dc3545; /* Red color for delete button */
+    color: #fff;
+    border: none;
+    padding: 3px 5px;
+    cursor: pointer;
+}
+
+.ongoing-operations .end-operation-button:hover {
+    background-color: #c82333; /* Darker shade */
+}
+
+.announcements { 
+    margin-bottom: 20px; 
+    padding: 15px; 
+    border: 3px solid #f7d306; 
+}
+
+ /* CSS for the "Add" button */
+ #addOperationButton {
+    padding: 5px 20px;
+    background-color: #163020;
+    border: none;
+    color: rgb(240, 236, 8);
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    font-size: 12px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition-duration: 0.4s;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+#addOperationButton:hover {
+    background-color: #36bd0d57; /* Darker Green */
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 12px 30px 0 rgba(0,0,0,0.19);
+}
+
+.notification-btn {
+    font-size: 12px;
+    font-weight: bold;
+    background-color: #f3ef09;
+    color: #0b4406;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 999; /* Ensure it's above other elements */
+    border-radius: 5px;
+}
+
+.notification-btn:hover {
+    background-color: #36bd0d57; /* Darker shade on hover */
+}
+
+
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(238, 215, 13);
+    background-color: rgba(241, 238, 8, 0.4);
+}
+
+.modal-content {
+    background-color: #163020;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+.close {
+    color: #080606;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {  
+    color: rgb(236, 233, 8);
+    text-decoration: none;
+    cursor: pointer;
+}
+.clear-btn {
+    background-color: #224931;
+    color: #f3e40c;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.clear-btn:hover {  
+    background-color: #dd1010;
+}
+.notification-popup {
+    display: none; /* Initially hidden */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(73, 73, 63, 0.5);
+}
+
+.notification-popup.active {
+    display: block; /* Visible when active */
+}
+/* Container styles */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+/* Announcement section styles */
+.announcements, .featured-documents, .search {
+    flex: 0 1 30%; /* Adjust width as needed */
+    background-color: #163020;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+/* Announcements section styles */
+.announcements h2, .featured-documents h2, .search h2 {
+    font-size: x-large;
+    font-family: Times New Roman;
+    color: #e9e50c;
+    margin-bottom: 10px;
+}
+
+/* Featured documents styles */
+#documentList {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.document-item {
+    padding: 10px;
+    background-color: #FCDC2A;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.document-item:hover {
+    background-color: #8cb6a859;
+    cursor: pointer;
+}
+
+/* Search section styles */
+#searchInput {
+    padding: 10px;
+    width: calc(100% - 130px); /* Adjust width as needed */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+#searchButton {
+    font-weight: bold;
+    font-family: Times New Roman;
+    padding: 10px 20px;
+    background-color: #FCDC2A;
+    color: #030202;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#searchButton:hover {
+    background-color: #eafa0944;
+}
+
+#searchResults {
+    margin-top: 20px;
+    /* Display search results here */
+}
+header {
+    font-size: x-large;
+    font-family: Times New Roman;
+    background-color:#163020;
+    color: #e9e50c;
+    text-align: center;
+    padding: 20px 0;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    /* Adjust styles for smaller screens */
+    .container {
+        width: 95%; /* Further adjusted width for smaller screens */
+        margin-left: 150px; /* Adjusted margin to accommodate the smaller sidebar width */
+    }
+    .sidebar {
+        width: 150px; /* Reduced width for smaller screens */
+    }
+    .container p {
+        font-size: 20px; /* Adjusted font size for smaller screens */
+    }
+}

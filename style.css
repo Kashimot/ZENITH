@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+header{
+    width: 100%;
+    height: 100vh;
+    background: url(pics/sol.jpg);
+    background-size: cover;
+    font-family: 'Poppons',sans-serif;
+}
+nav{
+    width: 100%;
+    height: 100px;
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.logo{
+    font-size: 2em;
+    letter-spacing: 2px;
+}
+.logo img{
+    margin-top: 15%;
+    width: 50%;
+    height: 50%;
+}
+.menu {
+    display: flex; /* Added to make the menu items inline */
+}
+.menu a{
+    text-decoration: none;
+    color: white;
+    padding: 10px 20px;
+    font-size: 20px;
+    display: inline;
+}
+.login a{
+    text-decoration: none;
+    color: white;
+    padding: 10px 20px;
+    font-size: 20px;
+    border-radius: 8px;
+    background: indianred;
+}
+.login a:hover{
+    border: 1px solid indianred;
+    background: transparent;
+}
+.h-text{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    max-width: 650px;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+}
+.h-text span{
+    letter-spacing: 5px;
+}
+.h-text h1{
+    font-size: 3.5em;
+}
+.h-text a{
+    text-decoration: none;
+    background-color: indianred;
+    padding: 10px 20px;
+    color: white;
+    letter-spacing: 5px;
+}
+.h-text a:hover{
+    border: 1px solid indianred;
+    background: transparent;
+}
+.learn-more-button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.learn-more-button:hover {
+    background-color: #0056b3;
+}
+/* Mission Content CSS */
+#mission {
+    display: none;
+    position: fixed;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.7);;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+}
+
+/* Vision Content CSS */
+#vision {
+    display: none;
+    position: fixed;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.7);;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+}
+
+/* Contact Content CSS */
+#contact {
+    display: none;
+    position: fixed;
+    top: 15%;
+    left: 60%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.7);;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+}
+
+/* Explore Content CSS */
+#explore {
+    display: none;
+    position: fixed;
+    top: 17.5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.7);;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+}
+/* Popup Container CSS */
+.popup-container {
+    display: none; /* Content is hidden by default */
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 10px;
+    border: 1px solid white;
+    z-index: 1;
+    color: black;
+    top: 10%;
+    max-width: 20%;
+    border-radius: 10px;
+}
+
+.nav-item:hover .popup-container {
+    display: block; /* Show content when hovering over the nav-item */
+}
