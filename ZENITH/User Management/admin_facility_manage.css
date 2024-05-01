@@ -3,7 +3,7 @@ body, html {
     padding: 0;
     height: 100%;
     font-family: Arial, sans-serif;
-    background-color: #418645;
+    background-color: #627254;
 }
 
 .sidebar {
@@ -12,7 +12,7 @@ body, html {
     left: 0;
     height: 100%;
     width: 250px;
-    background-color: #333;
+    background-color: #76885B;
     color: #fff;
     overflow-y: auto;
 }
@@ -57,7 +57,7 @@ body, html {
 }
 
 .nav-btn {
-    background-color: #095f14;
+    background-color: #304D30;
     color: #e4ebe4;
     border: none;
     padding: 10px 20px;
@@ -69,8 +69,7 @@ body, html {
 }
 /* Sidebar styles */
 .sidebar {
-    background-color: #333;
-    color: #fff;
+    background-color: #163020;
     width: 200px;
     height: 100vh;
     position: fixed;
@@ -84,17 +83,17 @@ body, html {
 }
 
 .sidebar h2 {
-    margin-top: 40px;
     padding: 20px;
 }
 
 .sidebar ul {
+    margin-top: 100px;
     list-style-type: none;
     padding: 0;
 }
 
 .sidebar ul li {
-    margin-bottom: 10px;
+    margin-top: 20px;
 }
 
 .sidebar ul li a {
@@ -103,16 +102,17 @@ body, html {
     width: 150px;
     padding: 10px;
     text-align: center;
-    background-color: #066109;
-    color: white;
+    background-color: #304D30;
+    color: #fbff00;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     text-decoration: none;
+    font-weight: bold;
 }
 
 .sidebar ul li a:hover {
-    background-color: #14b41f;
+    background-color: #fce30085;
 }
 
 /* Hamburger menu styles */
@@ -122,11 +122,22 @@ body, html {
     left: 20px;
     z-index: 999; /* Ensure it's above other elements */
 }
+.menu-label {
+    font-weight: bold;
+    font-size: 20px;
+    color: #e9d30b; /* Adjust color as needed */
+    position: absolute; /* Set position to absolute */
+    top: -5px; /* Adjust top position to place it at the very top */
+    left: 50px; /* Adjust left position to position it beside the hamburger menu */
+}
+
+
+
 
 .hamburger-icon {
     width: 40px;
     height: 5px;
-    background-color: #e6f0e6;
+    background-color: #fbff00;
     position: relative;
     transition: background-color 0.3s ease;
 }
@@ -137,7 +148,7 @@ body, html {
     position: absolute;
     width: 100%;
     height: 3px;
-    background-color: #eaf0eb;
+    background-color: #fbff00;
     transition: transform 0.3s ease;
 }
 
@@ -176,75 +187,229 @@ body, html {
 }
 
 .facility-requests-container .pending-requests {
-    background-color: #fff;
-    border: 1px solid #ccc;
+    color: #e9c80c;
+    background-color: #163020;
+    border: 1px solid #f7f306;
     border-radius: 5px;
     padding: 20px;
     margin-bottom: 20px;
 }
-
-.granted-button {
-    margin-top: 20px;
-    text-align: center;
+#pendingRequestsList tr td:nth-child(1),
+#pendingRequestsList tr td:nth-child(2) {
+    margin-right: 100px; /* Adjust the margin as needed */
 }
 
-.granted-button button {
-    padding: 8px 16px;
-    background-color: #4CAF50;
-    color: white;
+
+/* Style for grant and reject buttons */
+
+.grant-btn {
+    background-color: #4CAF50; /* Green */
     border: none;
-    border-radius: 3px;
+    color: white;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 4px 2px;
     cursor: pointer;
+    border-radius: 4px;
 }
 
-.granted-button button:hover {
-    background-color: #45a049;
+/* Reject button */
+.reject-btn {
+    background-color: #f44336; /* Red */
+    border: none;
+    color: white;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
 }
 
-.facility-history {
-    padding: 20px;
-    overflow-y: auto;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+/* Delete button */
+.delete-btn {
+    background-color: #555555; /* Dark Gray */
+    border: none;
+    color: white;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
 }
 
-#facilityHistoryTable {
-    width: 100%;
-    border-collapse: collapse;
-    background-color: #fff;
-}
-
-#facilityHistoryTable th,
-#facilityHistoryTable td {
-    padding: 6px;
-    border: 1px solid #ddd;
-}
-
-#facilityHistoryTable th {
-    background-color: #f2f2f2;
+/* Hover effect */
+.grant-btn:hover, .reject-btn:hover, .delete-btn:hover {
+    opacity: 0.8;
 }
 
 .add-facility-form input[type="text"] {
-    width: calc(100% - 120px);
+    color: #e9c80c;
+   background-color: #163020;
+   font-weight: bold;
+    margin-left: 280px;
+    width: calc(60% - 120px);
     padding: 8px;
     margin-bottom: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid #f8d301;
     border-radius: 3px;
 }
 
 .add-facility-form button[type="submit"] {
-    width: 100px;
-    padding: 8px;
-    background-color: #4CAF50;
-    color: white;
+    color: #e9c80c;
+    font-weight: bold;
+    font-size: 16px;
+    width: 200px;
+    padding: 10px;
+    background-color: #163020;
     border: none;
     border-radius: 3px;
     cursor: pointer;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 425px;
 }
 
 .add-facility-form button[type="submit"]:hover {
     background-color: #45a049;
 }
+.add-facility h2 {
+    text-align: center;
+    color: #e9c80c;
+}
+
+.facility-management {
+    margin-top: 20px;
+}
+
+.added-facilities h3 {
+    color: #e9c80c;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.facility-history {
+    margin-top: 20px;
+}
+
+#facilityHistoryTable {
+    color: #ddc90f;
+    background-color: #163020;
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+#facilityHistoryTable th,
+#facilityHistoryTable td {
+    padding: 8px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+#facilityHistoryTable th {
+    background-color: #163020; /* Green */
+    color: #d6e410;
+}
+
+#facilityHistoryTable tbody tr:nth-child(even) {
+    background-color: #163020;
+}
+
+
+
+.facility-table {
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.facility-table h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+#facilityTable {
+    width: 100%;
+    border-collapse: collapse;
+    color: #ddc90f;
+    font-weight: bold;
+}
+
+#facilityTable th,
+#facilityTable td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+#facilityTable th {
+    color: #ddc90f;
+    background-color: #163020;
+    font-weight: bold;
+}
+
+#facilityTable tbody tr:hover {
+    background-color: #163020;
+}
+
+#facilityTable .delete-btn {
+    background-color: #f44336; /* Red */
+    border: none;
+    color: white;
+    padding: 8px 12px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 2px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+#facilityTable .delete-btn:hover {
+    background-color: #d32f2f; /* Darker red */
+}
+.pagination-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px; /* Adjust as needed */
+}
+
+.pagination-buttons {
+    display: flex;
+    align-items: center;
+    margin-left: 10px; /* Adjust as needed */
+}
+
+.pagination-buttons button {
+    margin: 0 5px; /* Adjust as needed */
+    padding: 10px 20px;
+    border: none;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.pagination-buttons button:hover {
+    background-color: #45a049;
+}
+
+.pagination-buttons span {
+    font-weight: bold;
+    margin: 0 10px;
+}
+
 
 
 /* Media query for smaller screens */

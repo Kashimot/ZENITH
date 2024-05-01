@@ -1,35 +1,40 @@
 <?php
+// Establish database connection (replace with your database credentials)
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "zenith"; // Replace with your database name
 
-// Check if the facility name is provided
-if(isset($_POST['facilityName'])) {
-    // Get the facility name from the POST data
-    $facilityName = $_POST['facilityName'];
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
 
-    // Connect to the database
-    $conn = new mysqli('localhost', 'root', '', 'zenith');
-
-    // Check the connection
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
-
-    // Prepare the SQL statement to insert the facility
-    $sql = "INSERT INTO facilities (name) VALUES ('$facilityName')";
-
-    // Execute the SQL statement
-    if ($conn->query($sql) === TRUE) {
-        // Facility added successfully
-        echo json_encode(array('success' => true));
-    } else {
-        // Error adding facility
-        echo json_encode(array('success' => false, 'message' => 'Error adding facility: ' . $conn->error));
-    }
-
-    // Close the database connection
-    $conn->close();
-} else {
-    // If facility name is not provided, return an error
-    echo json_encode(array('success' => false, 'message' => 'Facility name is required'));
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
 }
 
+// Check if facility name is set in the POST data
+if (isset($_POST['facilityName'])) {
+    $facilityName = $_POST['facilityName'];
+
+    // Prepare SQL statement to insert facility into the database
+    $sql = "INSERT INTO facilities (name) VALUES (?)";
+
+    // Create prepared statement
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("s", $facilityName);
+
+    // Execute the statement
+    if ($stmt->execute()) {
+        echo "Facility added successfully";
+    } else {
+        echo "Error adding facility: " . $stmt->error;
+    }
+
+    // Close statement and connection
+    $stmt->close();
+    $conn->close();
+} else {
+    echo "Facility name not provided";
+}
 ?>

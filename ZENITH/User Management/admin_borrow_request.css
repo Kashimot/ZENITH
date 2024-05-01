@@ -3,7 +3,7 @@ body, html {
     padding: 0;
     height: 100%;
     font-family: Arial, sans-serif;
-    background-color: #418645;
+    background-color: #627254;
 }
 
 .sidebar {
@@ -12,7 +12,7 @@ body, html {
     left: 0;
     height: 100%;
     width: 250px;
-    background-color: #333;
+    background-color: #76885B;
     color: #fff;
     overflow-y: auto;
 }
@@ -57,7 +57,7 @@ body, html {
 }
 
 .nav-btn {
-    background-color: #095f14;
+    background-color: #304D30;
     color: #e4ebe4;
     border: none;
     padding: 10px 20px;
@@ -69,8 +69,7 @@ body, html {
 }
 /* Sidebar styles */
 .sidebar {
-    background-color: #333;
-    color: #fff;
+    background-color: #163020;
     width: 200px;
     height: 100vh;
     position: fixed;
@@ -84,17 +83,17 @@ body, html {
 }
 
 .sidebar h2 {
-    margin-top: 40px;
     padding: 20px;
 }
 
 .sidebar ul {
+    margin-top: 100px;
     list-style-type: none;
     padding: 0;
 }
 
 .sidebar ul li {
-    margin-bottom: 10px;
+    margin-top: 20px;
 }
 
 .sidebar ul li a {
@@ -103,16 +102,17 @@ body, html {
     width: 150px;
     padding: 10px;
     text-align: center;
-    background-color: #066109;
-    color: white;
+    background-color: #304D30;
+    color: #fbff00;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     text-decoration: none;
+    font-weight: bold;
 }
 
 .sidebar ul li a:hover {
-    background-color: #14b41f;
+    background-color: #fce30085;
 }
 
 /* Hamburger menu styles */
@@ -122,11 +122,22 @@ body, html {
     left: 20px;
     z-index: 999; /* Ensure it's above other elements */
 }
+.menu-label {
+    font-weight: bold;
+    font-size: 20px;
+    color: #e9d30b; /* Adjust color as needed */
+    position: absolute; /* Set position to absolute */
+    top: -5px; /* Adjust top position to place it at the very top */
+    left: 50px; /* Adjust left position to position it beside the hamburger menu */
+}
+
+
+
 
 .hamburger-icon {
     width: 40px;
     height: 5px;
-    background-color: #e6f0e6;
+    background-color: #fbff00;
     position: relative;
     transition: background-color 0.3s ease;
 }
@@ -137,7 +148,7 @@ body, html {
     position: absolute;
     width: 100%;
     height: 3px;
-    background-color: #eaf0eb;
+    background-color: #fbff00;
     transition: transform 0.3s ease;
 }
 
@@ -163,6 +174,7 @@ body, html {
     transform: rotate(-45deg);
     bottom: 0;
 }
+
 .admin-section {
     margin-bottom: 20px;
 }
@@ -180,26 +192,27 @@ body, html {
 }
 
 #historyTable th, #historyTable td {
-    border: 1px solid #ddd;
+    border: 1px solid #f3db06;
     padding: 8px;
     text-align: left;
 }
 
 #historyTable th {
-    background-color: #f2f2f2;
+    font-weight: bold;
+    color: #e9d30b;
+    background-color: #163020;
 }
 
 #historyTable tbody tr:nth-child(even) {
-    background-color: #f2f2f2;
-}
-
-#historyTable tbody tr:hover {
-    background-color: #ddd;
+    font-weight: bold;
+    color: #e9d30b;
+    background-color: #163020;
 }
 
 #historyTable button {
+    font-weight: bold;
     background-color: #ff4d4d;
-    color: white;
+    color: rgb(236, 236, 226);
     border: none;
     border-radius: 4px;
     padding: 6px 12px;
@@ -207,7 +220,7 @@ body, html {
 }
 
 #historyTable button:hover {
-    background-color: #ff6666;
+    background-color: #860505;
 }
 .admin-section h2 {
     font-size: 1.5em;

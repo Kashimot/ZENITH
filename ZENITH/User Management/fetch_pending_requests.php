@@ -1,37 +1,37 @@
 <?php
+// Establish database connection
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "zenith";
 
-// Connect to the database
-$conn = new mysqli('localhost', 'root', '', 'zenith');
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
 
-// Check the connection
+// Check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-// Prepare the SQL statement to fetch pending requests
-$sql = "SELECT facility, requester, id FROM pending_requests";
-
-// Execute the SQL statement
+// Prepare and execute SQL query to fetch pending requests
+$sql = "SELECT * FROM pending_requests WHERE status = 'pending'";
 $result = $conn->query($sql);
 
-// Initialize an empty array to store pending requests data
+// Initialize an empty array to store the results
 $pendingRequests = array();
 
-// Check if there are results
+// Check if there are any pending requests
 if ($result->num_rows > 0) {
-    // Fetch each row and add it to the pending requests array
+    // Loop through each row in the result set
     while ($row = $result->fetch_assoc()) {
+        // Append each row to the pendingRequests array
         $pendingRequests[] = $row;
     }
-} else {
-    // No pending requests found
-    echo json_encode(array('success' => false, 'message' => 'No pending requests found'));
 }
+
+// Convert the pendingRequests array to JSON and output it
+echo json_encode($pendingRequests);
 
 // Close the database connection
 $conn->close();
-
-// Return the pending requests data as JSON
-echo json_encode($pendingRequests);
-
 ?>

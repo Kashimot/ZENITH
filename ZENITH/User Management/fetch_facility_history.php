@@ -1,37 +1,50 @@
 <?php
+// Establish database connection (replace with your database credentials)
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "zenith";
 
-// Connect to the database
-$conn = new mysqli('localhost', 'root', '', 'zenith');
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
 
-// Check the connection
+// Check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-// Prepare the SQL statement to fetch facility history
-$sql = "SELECT date, facility_name FROM facility_history";
+// Pagination parameters
+$recordsPerPage = isset($_GET['perPage']) ? $_GET['perPage'] : 10; // Number of records per page
+$page = isset($_GET['page']) ? $_GET['page'] : 1; // Current page
 
-// Execute the SQL statement
-$result = $conn->query($sql);
+// Calculate the starting record for the current page
+$start = ($page - 1) * $recordsPerPage;
 
-// Initialize an empty array to store facility history data
+// Prepare SQL statement to fetch facility history with pagination
+$sql = "SELECT date, facilityName, granted_by, rejected_by FROM facility_history LIMIT ?, ?";
+$stmt = $conn->prepare($sql);
+$stmt->bind_param("ii", $start, $recordsPerPage);
+$stmt->execute();
+$result = $stmt->get_result();
+
+// Initialize an array to store facility history
 $facilityHistory = array();
 
-// Check if there are results
-if ($result->num_rows > 0) {
-    // Fetch each row and add it to the facility history array
-    while ($row = $result->fetch_assoc()) {
-        $facilityHistory[] = $row;
-    }
-} else {
-    // No facility history found
-    echo json_encode(array('success' => false, 'message' => 'No facility history found'));
+// Fetch facility history and add them to the array
+while ($row = $result->fetch_assoc()) {
+    $facility = array(
+        'date' => $row['date'],
+        'facilityName' => $row['facilityName'],
+        'granted_by' => $row['granted_by'],
+        'rejected_by' => $row['rejected_by'] // Include rejected_by column
+    );
+    $facilityHistory[] = $facility;
 }
 
-// Close the database connection
-$conn->close();
-
-// Return the facility history data as JSON
+// Output facility history as JSON
 echo json_encode($facilityHistory);
 
+// Close statement and connection
+$stmt->close();
+$conn->close();
 ?>

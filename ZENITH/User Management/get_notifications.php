@@ -13,18 +13,28 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-// Prepare SQL statement to fetch notifications
-$sql = "SELECT * FROM notifications ORDER BY sent_at DESC";
+// Prepare SQL statement to fetch latest notifications with a limit of 10
+$sql = "SELECT * FROM notifications ORDER BY sent_at DESC LIMIT 1";
 $result = $conn->query($sql);
 
-// Output notifications as list items
+// Initialize an array to store notifications
+$notifications = array();
+
+// Check if there are notifications
 if ($result->num_rows > 0) {
+    // Fetch notifications and add them to the array
     while ($row = $result->fetch_assoc()) {
-        echo '<li>' . $row['message'] . '</li>';
+        $notification = array(
+            'id' => $row['id'],
+            'message' => $row['message'],
+            'sent_at' => $row['sent_at']
+        );
+        $notifications[] = $notification;
     }
-} else {
-    echo '<li>No notifications found</li>';
 }
+
+// Output notifications as JSON
+echo json_encode($notifications);
 
 // Close connection
 $conn->close();

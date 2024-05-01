@@ -3,7 +3,7 @@ body, html {
     padding: 0;
     height: 100%;
     font-family: Arial, sans-serif;
-    background-color: #134b16;
+    background-color: #627254;
 }
 
 .sidebar {
@@ -12,7 +12,7 @@ body, html {
     left: 0;
     height: 100%;
     width: 250px;
-    background-color: #a7ebaa;
+    background-color: #76885B;
     color: #fff;
     overflow-y: auto;
 }
@@ -57,7 +57,7 @@ body, html {
 }
 
 .nav-btn {
-    background-color: #095f14;
+    background-color: #304D30;
     color: #e4ebe4;
     border: none;
     padding: 10px 20px;
@@ -69,8 +69,7 @@ body, html {
 }
 /* Sidebar styles */
 .sidebar {
-    background-color: #5e9e61;
-    color: #fff;
+    background-color: #163020;
     width: 200px;
     height: 100vh;
     position: fixed;
@@ -84,17 +83,17 @@ body, html {
 }
 
 .sidebar h2 {
-    margin-top: 40px;
     padding: 20px;
 }
 
 .sidebar ul {
+    margin-top: 100px;
     list-style-type: none;
     padding: 0;
 }
 
 .sidebar ul li {
-    margin-bottom: 10px;
+    margin-top: 10px;
 }
 
 .sidebar ul li a {
@@ -103,16 +102,17 @@ body, html {
     width: 150px;
     padding: 10px;
     text-align: center;
-    background-color: #066109;
-    color: white;
+    background-color: #304D30;
+    color: #fbff00;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     text-decoration: none;
+    font-weight: bold; 
 }
 
 .sidebar ul li a:hover {
-    background-color: #14b41f;
+    background-color: #fce30085;
 }
 
 /* Hamburger menu styles */
@@ -122,11 +122,22 @@ body, html {
     left: 20px;
     z-index: 999; /* Ensure it's above other elements */
 }
+.menu-label {
+    font-weight: bold;
+    font-size: 20px;
+    color: #e9d30b; /* Adjust color as needed */
+    position: absolute; /* Set position to absolute */
+    top: -5px; /* Adjust top position to place it at the very top */
+    left: 50px; /* Adjust left position to position it beside the hamburger menu */
+}
+
+
+
 
 .hamburger-icon {
     width: 40px;
     height: 5px;
-    background-color: #e6f0e6;
+    background-color: #fbff00;
     position: relative;
     transition: background-color 0.3s ease;
 }
@@ -137,7 +148,7 @@ body, html {
     position: absolute;
     width: 100%;
     height: 3px;
-    background-color: #eaf0eb;
+    background-color: #fbff00;
     transition: transform 0.3s ease;
 }
 
@@ -163,134 +174,117 @@ body, html {
     transform: rotate(-45deg);
     bottom: 0;
 }
+
 /* Container styling */
 .container {
-    width: 60%;
+    max-width: 600px;
     margin: 0 auto;
-    margin-top: 50px;
-    border-radius: 10px;
     padding: 20px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-    position: relative;
-    overflow: hidden; /* Ensure content overflow is hidden */
-    margin-left: 250px;
-}   
-
-/* Form container styling */
-.form-container {
-    border-radius: 10px;
-    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
 
-/* Styling for checkboxes */
-input[type="checkbox"] {
-    margin-right: 10px; /* Add space between checkbox and label */
-    margin-left: 0; /* Reset left margin */
-    appearance: none; /* Remove default appearance */
-    -webkit-appearance: none; /* For Safari */
-    width: 20px; /* Set width and height for custom checkbox */
-    height: 20px;
-    border: 2px solid #000000; /* Add border */
-    border-radius: 5px; /* Add border-radius for rounded corners */
-    transition: border-color 0.3s; /* Add transition for smooth border color change */
-    flex-shrink: 0; /* Prevent checkbox from shrinking */
+h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
 }
 
-/* Styling for labels */
-label {
-    display: flex; /* Use flexbox to align checkbox and label */
-    align-items: center; /* Vertically center checkbox and label */
+form {
+    margin-bottom: 20px;
+}
+
+input[type="file"],
+input[type="text"],
+select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+select {
     font-weight: bold;
-    margin-bottom: 5px;
-    cursor: pointer; /* Change cursor to pointer when hovering over label */
+    height: 40px;
 }
 
-/* Styling for custom checkbox when checked */
-input[type="checkbox"]:checked {
-    background-color: #4CAF50; /* Change background color when checked */
-    border-color: #4CAF50; /* Change border color when checked */
-}
-
-/* Styling for form submit button */
 button[type="submit"] {
-    background-color: #4CAF50;
-    color: white;
-    padding: 12px 24px;
+    background-color: #007bff;
+    color: #fff;
     border: none;
     border-radius: 5px;
+    padding: 10px 20px;
     cursor: pointer;
-    transition: background-color 0.3s;
-    margin-top: 10px;
-    margin-right: 900px;
-    width: 150px;
+    font-size: 16px;
 }
 
 button[type="submit"]:hover {
-    background-color: #10c219;
-}
-/* Styling for the send document form */
-.container {
-    margin: 20px auto;
-    max-width: 600px;
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #0056b3;
 }
 
-.container h2 {
-    margin-top: 0;
-    font-size: 24px;
-    color: #0a0909;
+
+/* Styles for the form */
+#uploadAndSendToAdminForm {
+    margin-bottom: 20px;
 }
 
-.file-list {
-    list-style-type: none;
-    padding: 0;
-}
-
-.file-list li {
+#uploadAndSendToAdminForm input[type="file"] {
+    display: block;
     margin-bottom: 10px;
 }
 
-.file-list li label {
-    display: block;
-}
-
-.file-list li input[type="checkbox"] {
-    margin-right: 10px;
-}
-
-button[type="submit"] {
-    background-color: #0e5c0e;
-    color: #f6fdf5;
+#uploadAndSendToAdminForm button {
+    margin-top: 20px;
+    font-weight: bold;
+    padding: 9px 10px;
+    background-color: #064e08;
+    color: rgb(255, 251, 0);
     border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    border-radius: 5px;
     cursor: pointer;
 }
 
-button[type="submit"]:hover {
-    background-color: #2ba705;
+#uploadAndSendToAdminForm button:hover {
+    background-color: #45a049;
 }
-.approval-status {
-    width: 100%;
+/* Style for uploaded files table */
+.uploaded-files {
+    margin-left: 300px;
+    width: 70%;
     border-collapse: collapse;
     margin-top: 20px;
 }
 
-.approval-status th, .approval-status td {
-    border: 1px solid #ccc;
-    padding: 8px;
-}
-
-.approval-status th {
+/* Style for table header */
+.uploaded-files th {
     background-color: #f2f2f2;
-    font-weight: bold;
+    padding: 12px;
     text-align: left;
+    border-bottom: 1px solid #ddd;
 }
 
-.approval-status td {
-    text-align: center;
+/* Style for table body */
+.uploaded-files td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Style for alternating row colors */
+.uploaded-files tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Style for status column */
+.uploaded-files td:nth-child(2) {
+    font-weight: bold;
+}
+
+/* Style for approved status */
+.uploaded-files td:nth-child(2).approved {
+    color: green;
+}
+
+/* Style for rejected status */
+.uploaded-files td:nth-child(2).rejected {
+    color: red;
 }

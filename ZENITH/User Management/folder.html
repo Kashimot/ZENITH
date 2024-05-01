@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Folders</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        form {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        input[type="text"],
+        select {
+            width: calc(100% - 10px);
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            float: left;
+        }
+        select {
+            width: 100%;
+        }
+        button {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+            float: left;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .folder-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .folder-list li {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        .delete-checkbox {
+            margin-right: 10px;
+            flex-shrink: 0;
+        }
+        .delete-selected {
+            margin-top: 20px;
+            background-color: #f44336;
+        }
+        .delete-selected:hover {
+            background-color: #d32f2f;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Manage Folders</h2>
+        <form action="create_folder.php" method="post">
+            <div>
+                <label for="organization">Organization:</label>
+                <select id="organization" name="organization" required>
+                    <option value="">Select Organization</option>
+                    <option value="organization1">Organization 1</option>
+                    <option value="organization2">Organization 2</option>
+                    <option value="organization3">Organization 3</option>
+                </select>
+            </div>
+            <div>
+                <label for="folder_name">Folder Name:</label>
+                <input type="text" id="folder_name" name="folder_name" required>
+            </div>
+            <button type="submit">Create Folder</button>
+        </form>
+        <h3>Existing Folders:</h3>
+        <ul class="folder-list">
+            <li>
+                <input type="checkbox" class="delete-checkbox">
+                <span>Folder 1</span>
+            </li>
+            <li>
+                <input type="checkbox" class="delete-checkbox">
+                <span>Folder 2</span>
+            </li>
+            <li>
+                <input type="checkbox" class="delete-checkbox">
+                <span>Folder 3</span>
+            </li>
+        </ul>
+        <button class="delete-selected">Delete Selected Folders</button>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Function to handle deletion of selected folders
+            document.querySelector('.delete-selected').addEventListener('click', function() {
+                var checkboxes = document.querySelectorAll('.delete-checkbox:checked');
+                var foldersToDelete = [];
+                checkboxes.forEach(function(checkbox) {
+                    foldersToDelete.push(checkbox.nextElementSibling.textContent.trim());
+                });
+                if (foldersToDelete.length > 0) {
+                    if (confirm('Are you sure you want to delete the selected folders?')) {
+                        // Here you can make an AJAX request to delete the selected folders
+                        // For demonstration purpose, we will just log the folders to be deleted
+                        console.log('Folders to delete:', foldersToDelete);
+                    }
+                } else {
+                    alert('Please select at least one folder to delete.');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -3,7 +3,7 @@ body, html {
     padding: 0;
     height: 100%;
     font-family: Arial, sans-serif;
-    background-color: #a7ebaa;
+    background-color: #627254;
 }
 
 .sidebar {
@@ -12,7 +12,7 @@ body, html {
     left: 0;
     height: 100%;
     width: 250px;
-    background-color: #d3c5c554;
+    background-color: #76885B;
     color: #fff;
     overflow-y: auto;
 }
@@ -57,7 +57,7 @@ body, html {
 }
 
 .nav-btn {
-    background-color: #095f14;
+    background-color: #304D30;
     color: #e4ebe4;
     border: none;
     padding: 10px 20px;
@@ -69,7 +69,7 @@ body, html {
 }
 /* Sidebar styles */
 .sidebar {
-    background-color: #3333337c;
+    background-color: #163020;
     width: 200px;
     height: 100vh;
     position: fixed;
@@ -102,16 +102,17 @@ body, html {
     width: 150px;
     padding: 10px;
     text-align: center;
-    background-color: #0b4b0d;
-    color: white;
+    background-color: #304D30;
+    color: #fbff00;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     text-decoration: none;
+    font-weight: bold;
 }
 
 .sidebar ul li a:hover {
-    background-color: #149b1d;
+    background-color: #fce30085;
 }
 
 /* Hamburger menu styles */
@@ -124,7 +125,7 @@ body, html {
 .menu-label {
     font-weight: bold;
     font-size: 20px;
-    color: #000; /* Adjust color as needed */
+    color: #e9d30b; /* Adjust color as needed */
     position: absolute; /* Set position to absolute */
     top: -5px; /* Adjust top position to place it at the very top */
     left: 50px; /* Adjust left position to position it beside the hamburger menu */
@@ -136,7 +137,7 @@ body, html {
 .hamburger-icon {
     width: 40px;
     height: 5px;
-    background-color: #121412;
+    background-color: #fbff00;
     position: relative;
     transition: background-color 0.3s ease;
 }
@@ -147,8 +148,9 @@ body, html {
     position: absolute;
     width: 100%;
     height: 3px;
-    background-color: #0f0f0f;
+    background-color: #fbff00;
     transition: transform 0.3s ease;
+    left: 0.1px;
 }
 
 .hamburger-icon:before {
@@ -172,152 +174,28 @@ body, html {
 .hamburger-menu.active .hamburger-icon:after {
     transform: rotate(-45deg);
     bottom: 0;
-}
-
-/* Announcements */
-.announcements {    
-    background-color: #36a11b; /* Lighter gray background */
-    border-radius: 10px; /* Rounded corners */
-    padding: 20px;
-    margin-top: 40px;
-}
-
-.announcements h2 {
-    color: #f7f7f7; /* Dark text color */
-    font-size: 24px;
-    margin-bottom: 10px;
-}
-
-.announcements p {
-    color: #f5efef; /* Slightly darker text color */
-    margin-top: 0;
-}
-
-/* Notification Area */
-.notification {
-    background-color: #ffc107; /* Yellow background */
-    border-radius: 5px;
-    padding: 20px;
-    margin-top: 20px;
-}
-
-.notification h2 {
-    color: #212529; /* Dark text color */
-    font-size: 24px;
-    margin-bottom: 15px;
-}
-
-.notification p {
-    color: #212529; /* Dark text color */
-    font-size: 16px;
-}
-
-/* Approved Documents */
-.approved-documents {
-    margin-top: 20px;
-}
-
-.approved-documents h2 {
-    font-size: 24px;
-    margin-bottom: 15px;
-}
-
-.approved-documents ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.approved-documents ul li {
-    margin-bottom: 10px;
-}
-
-.approved-documents ul li a {
-    color: #007bff; /* Link color */
-    text-decoration: none;
-}
-
-.approved-documents ul li a:hover {
-    text-decoration: underline;
-}
-
-/* Rejected Documents */
-.rejected-documents {
-    margin-top: 20px;
-}
-
-.rejected-documents h2 {
-    font-size: 24px;
-    margin-bottom: 15px;
-}
-
-.rejected-documents ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.rejected-documents ul li {
-    margin-bottom: 10px;
-}
-
-.rejected-documents ul li a {
-    color: #dc3545; /* Link color */
-    text-decoration: none;
-}
-
-.rejected-documents ul li a:hover {
-    text-decoration: underline;
-}
-/* Documents Container */
-.documents-container {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 20px;
-}
-
-/* Approved Documents */
-.approved-documents, .rejected-documents {
-    flex-basis: 48%; /* Adjust as needed */
-}
-
-.approved-documents h2, .rejected-documents h2 {
-    font-size: 24px;
-    margin-bottom: 15px;
-}
-
-.approved-documents ul, .rejected-documents ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.approved-documents ul li, .rejected-documents ul li {
-    margin-bottom: 10px;
-}
-
-.approved-documents ul li a, .rejected-documents ul li a {
-    color: #007bff; /* Link color */
-    text-decoration: none;
-}
-
-.approved-documents ul li a:hover, .rejected-documents ul li a:hover {
-    text-decoration: underline;
-}
+}  
 
 .notification-btn {
-    background-color: #3b9740;
-    color: #fff;
+    font-size: 16px;
+    font-family: Times New Roman;
+    font-weight: bold;
+    margin-right: 10px;
+    margin-top: 10px;
+    background-color: #FCDC2A;
+    border-radius: 5px;
+    color: #000000;
     border: none;
-    padding: 20px 10px;
+    padding: 10px 15px;
     cursor: pointer;
     position: fixed;
     top: 20px;
     right: 20px;
-    z-index: 999; /* Ensure it's above other elements */
-    border-radius: 5px;
 }
-
 .notification-btn:hover {
     background-color: #3cc705; /* Darker shade on hover */
 }
+
 
 .modal {
     display: none;
@@ -333,7 +211,7 @@ body, html {
 }
 
 .modal-content {
-    background-color: #3b9740;
+    background-color: #fefefe;
     margin: 15% auto;
     padding: 20px;
     border: 1px solid #888;
@@ -341,7 +219,7 @@ body, html {
 }
 
 .close {
-    color: #080606;
+    color: #aaa;
     float: right;
     font-size: 28px;
     font-weight: bold;
@@ -354,7 +232,7 @@ body, html {
     cursor: pointer;
 }
 .clear-btn {
-    background-color: #161112;
+    background-color: #dc3545;
     color: #fff;
     border: none;
     padding: 10px 20px;
@@ -363,7 +241,7 @@ body, html {
 }
 
 .clear-btn:hover {
-    background-color: #dd1010;
+    background-color: #c82333;
 }
 .notification-popup {
     display: none; /* Initially hidden */
@@ -379,76 +257,90 @@ body, html {
 
 .notification-popup.active {
     display: block; /* Visible when active */
-}   
+}
 
-/* Facilities Selection Form */
-#facilitySelectionForm {
-    margin-top: 20px;
-    background-color: #45964b;
+/* Header styles */
+header {
+    font-size: x-large;
+    font-family: Times New Roman;
+    background-color:#163020;
+    color: #e9e50c;
+    text-align: center;
+    padding: 20px 0;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+/* Container styles */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+/* Announcement section styles */
+.announcements, .featured-documents, .search {
+    flex: 0 1 30%; /* Adjust width as needed */
+    background-color: #163020;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-#facilitySelectionForm h2 {
-    margin-top: 0;
-    margin-bottom: 10px;
-    font-size: 20px;
-}
-
-#facilitySelect {
-    width: 100%;
-    padding: 10px;
     margin-bottom: 20px;
+}
+
+/* Announcements section styles */
+.announcements h2, .featured-documents h2, .search h2 {
+    font-size: x-large;
+    font-family: Times New Roman;
+    color: #e9e50c;
+    margin-bottom: 10px;
+}
+
+/* Featured documents styles */
+#documentList {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.document-item {
+    padding: 10px;
+    background-color: #FCDC2A;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.document-item:hover {
+    background-color: #8cb6a859;
+    cursor: pointer;
+}
+
+/* Search section styles */
+#searchInput {
+    padding: 10px;
+    width: calc(100% - 130px); /* Adjust width as needed */
     border: 1px solid #ccc;
     border-radius: 5px;
+    margin-right: 10px;
 }
 
-#facilitySelect option:first-child {
-    color: #999;
-}
-
-#facilitySelectionForm button[type="submit"] {
-    background-color: #085e08;
-    color: rgb(220, 228, 220);
+#searchButton {
+    font-weight: bold;
+    font-family: Times New Roman;
     padding: 10px 20px;
+    background-color: #FCDC2A;
+    color: #030202;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s;
 }
 
-#facilitySelectionForm button[type="submit"]:hover {
-    background-color: #56970b;
+#searchButton:hover {
+    background-color: #114232b6;
 }
 
-#facilitySelectionForm button[type="submit"]:focus {
-    outline: none;
-}
-
-/* Optional: Add media queries for responsiveness */
-@media (max-width: 768px) {
-    #facilitySelectionForm {
-        width: 100%;
-    }
-
-    #facilitySelect {
-        width: calc(100% - 40px);
-    }
-}
-
-/* Responsive design */
-@media (max-width: 768px) {
-    /* Adjust styles for smaller screens */
-    .container {
-        width: 95%; /* Further adjusted width for smaller screens */
-        margin-left: 150px; /* Adjusted margin to accommodate the smaller sidebar width */
-    }
-    .sidebar {
-        width: 150px; /* Reduced width for smaller screens */
-    }
-    .container p {
-        font-size: 20px; /* Adjusted font size for smaller screens */
-    }
+#searchResults {
+    margin-top: 20px;
+    /* Display search results here */
 }
